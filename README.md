@@ -147,7 +147,7 @@
         <!-- </a> -->
       </li>
       <li> 
-        <a href="https://github.com/ErvinCs/Design-Patterns">
+        <a href="https://github.com/ErvinCs/TRSI">
           Implementation Techniques for Intelligent Systems
         </a>
       </li>
