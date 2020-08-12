@@ -1,6 +1,6 @@
 # CSUBB
 <ul>
-  <li>:open_file_folder: Semester 1
+  <li>:open_file_folder: <b>Semester 1</b>
     <ul>
       <li>
         <a href="https://github.com/ErvinCs/FP"> 
@@ -23,7 +23,7 @@
       </li>
     </ul>
   </li>
-  <li>:open_file_folder: Semester 2
+  <li>:open_file_folder: <b>Semester 2</b>
     <ul>
       <li>
         <a href="https://github.com/ErvinCs/minesweeper-sda"> 
@@ -55,7 +55,7 @@
       </li>
     </ul>
   </li>
-  <li>:open_file_folder: Semester 3
+  <li>:open_file_folder: <b>Semester 3</b>
     <ul>
       <li>
         <a href="https://github.com/ErvinCs/DB"> 
@@ -82,7 +82,7 @@
       </li>
     </ul>
   </li>
-  <li>:open_file_folder: Semester 4
+  <li>:open_file_folder: <b>Semester 4</b>
     <ul>
       <li>
         <a href="https://github.com/ErvinCs/DBMS">
@@ -107,7 +107,7 @@
       </li>
     </ul>
   </li>
-  <li>:open_file_folder: Semester 5
+  <li>:open_file_folder: <b>Semester 5</b>
     <ul>
       <li> 
         <a href="https://github.com/ErvinCs/LFTC-Lab04"> <!-- And Lab05 -->
@@ -136,15 +136,17 @@
       </li>
     </ul>
   </li>
-  <li>:open_file_folder: Semester 6
+  <li>:open_file_folder: <b>Semester 6</b>
     <ul>
       <li> 
+	<a href="https://github.com/ErvinCs/ivy-game-engine">      
           Bachelor's Thesis
+	<a/>	
       </li>
       <li> 
-        <!-- <a href="https://github.com/ErvinCs/Android-Things"> Add unity Repo -->
+        <a href="https://github.com/ErvinCs/UBB-Game-Dev">
           Game Development
-        <!-- </a> -->
+        </a> 
       </li>
       <li> 
         <a href="https://github.com/ErvinCs/TRSI">
@@ -169,7 +171,7 @@
 </ul>
 
 <br>
-	<a href="http://www.cs.ubbcluj.ro">
-		<img src="http://www.chem.ubbcluj.ro/romana/conferinte/MEEMB/archive/pictures/ubb.gif" />
-	</a>
+  <a href="http://www.cs.ubbcluj.ro">
+    <img src="http://www.chem.ubbcluj.ro/romana/conferinte/MEEMB/archive/pictures/ubb.gif" />
+  </a>
 <br>
