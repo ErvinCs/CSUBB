@@ -144,7 +144,7 @@
     <ul>
       <li> 
 	<a href="https://github.com/ErvinCs/ivy-game-engine">      
-          Bachelor's Thesis
+          Bachelor's Thesis - A Dynamic Application for Generating Roguelike Games
 	<a/>	
       </li>
       <li> 
