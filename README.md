@@ -90,7 +90,7 @@
 	</a>
       </li>
       <li>
-        <a href="https://github.com/iss-3/Lab">
+        <a href="https://github.com/ErvinCs/Lab">
           Software Engineering
         </a>
       </li>
@@ -148,7 +148,7 @@
 	<a/>	
       </li>
       <li> 
-        <a href="https://github.com/ErvinCs/UBB-Game-Dev">
+        <a href="https://github.com/ErvinCs/NiN2D">
           Game Development
         </a> 
       </li>
