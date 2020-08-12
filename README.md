@@ -87,6 +87,7 @@
       <li>
         <a href="https://github.com/ErvinCs/DBMS">
           Database Management Systems
+	</a>
       </li>
       <li>
         <a href="https://github.com/iss-3/Lab">
@@ -96,14 +97,17 @@
       <li>
         <a href="https://github.com/ErvinCs/web-prog">
           Web Programming
+	</a>
       </li>
       <li>
         <a href="https://github.com/ErvinCs/web-bookstore-mpp">
           Systems for Design and Implementation
+	</a>
       </li>
       <li>
         <a href="https://github.com/ErvinCs/AI">
           Artificial Intelligence
+	</a>
       </li>
     </ul>
   </li>
