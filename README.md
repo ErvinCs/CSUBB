@@ -1,5 +1,11 @@
 # CSUBB
+
 <ul>
+  <li>:dart:
+    <a href="https://github.com/ErvinCs/ivy-game-engine">      
+      Bachelor's Thesis - A Dynamic Application for Generating Roguelike Games
+    <a/>
+  </li>
   <li>:open_file_folder: <b>Semester 1</b>
     <ul>
       <li>
@@ -142,11 +148,6 @@
   </li>
   <li>:open_file_folder: <b>Semester 6</b>
     <ul>
-      <li> 
-	<a href="https://github.com/ErvinCs/ivy-game-engine">      
-          Bachelor's Thesis - A Dynamic Application for Generating Roguelike Games
-	<a/>	
-      </li>
       <li> 
         <a href="https://github.com/ErvinCs/NiN2D">
           Game Development
