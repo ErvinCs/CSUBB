@@ -149,9 +149,7 @@
   <li>:open_file_folder: <b>Semester 6</b>
     <ul>
       <li> 
-        <a href="https://github.com/ErvinCs/NiN2D">
           Game Development
-        </a> 
       </li>
       <li> 
         <a href="https://github.com/ErvinCs/TRSI">
