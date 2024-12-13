@@ -9,12 +9,12 @@
   <li>:open_file_folder: <b>Semester 1</b>
     <ul>
       <li>
-        <a href="https://github.com/ErvinCs/FP"> 
+        <a href="https://github.com/ErvinCs/CSUBB/tree/master/1-FP-fundamentals-of-programming"> 
           Fundamental of Programming 
         </a>
       </li>
       <li>
-        <a href="https://github.com/ErvinCs/ASC"> 
+        <a href="https://github.com/ErvinCs/CSUBB/tree/master/1-ASC-computing-systems-architecture"> 
           Computing Systems Architecture
         </a>
       </li>    	
@@ -32,27 +32,27 @@
   <li>:open_file_folder: <b>Semester 2</b>
     <ul>
       <li>
-        <a href="https://github.com/ErvinCs/minesweeper-sda"> 
+        <a href="https://github.com/ErvinCs/CSUBB/tree/master/2-SDA-minesweeper"> 
           Data Structures and Algorithms 
         </a>
       </li>
       <li>
-        <a href="https://github.com/ErvinCs/shelter-oop"> 
+        <a href="https://github.com/ErvinCs/CSUBB/tree/master/2-OOP-shelter"> 
           Object Oriented Programming 
         </a>
       </li>
       <li>
-        <a href="https://github.com/ErvinCs/graphs"> 
+        <a href="https://github.com/ErvinCs/CSUBB/tree/master/2-G-graphs"> 
           Graph Algorithms
         </a>
       </li>
       <li>
-        <a href="https://github.com/ErvinCs/OS"> 
+        <a href="https://github.com/ErvinCs/CSUBB/tree/master/2-OS-operating-systems"> 
           Operating Systems
         </a>
       </li>
       <li>
-        <a href="https://github.com/ErvinCs/dyn-sys"> 
+        <a href="https://github.com/ErvinCs/CSUBB/tree/master/2-DS-dynamical-systems"> 
           Dynamical Systems
         </a>
       </li>
@@ -64,22 +64,22 @@
   <li>:open_file_folder: <b>Semester 3</b>
     <ul>
       <li>
-        <a href="https://github.com/ErvinCs/DB"> 
+        <a href="https://github.com/ErvinCs/CSUBB/tree/master/3-DB-databases"> 
           Databases 
         </a>
       </li>
       <li>
-        <a href="https://github.com/ErvinCs/FLP"> 
+        <a href="https://github.com/ErvinCs/CSUBB/tree/master/3-FLP-functional-and-logic-programming"> 
           Functional and Logic Programming 
         </a>
       </li>      
       <li>
-        <a href="https://github.com/ErvinCs/toy-interpreter-map"> 
+        <a href="https://github.com/ErvinCs/CSUBB/tree/master/3-MAP-toy-interpreter"> 
           Advanced Programming Methods
         </a>
       </li>
       <li>
-        <a href="https://github.com/ErvinCs/PS"> 
+        <a href="https://github.com/ErvinCs/CSUBB/tree/master/3-PS-probability-and-statistics"> 
           Probability and Statistics
         </a>
       </li>
@@ -91,27 +91,27 @@
   <li>:open_file_folder: <b>Semester 4</b>
     <ul>
       <li>
-        <a href="https://github.com/ErvinCs/DBMS">
+        <a href="https://github.com/ErvinCs/CSUBB/tree/master/4-DBMS-database-management-systems">
           Database Management Systems
 	</a>
       </li>
       <li>
-        <a href="https://github.com/ErvinCs/Lab">
+        <a href="https://github.com/ErvinCs/CSUBB/tree/master/4-SE-software-engineering">
           Software Engineering
         </a>
       </li>
       <li>
-        <a href="https://github.com/ErvinCs/web-prog">
+        <a href="https://github.com/ErvinCs/CSUBB/tree/master/4-WP-web-programming">
           Web Programming
 	</a>
       </li>
       <li>
-        <a href="https://github.com/ErvinCs/web-bookstore-mpp">
+        <a href="https://github.com/ErvinCs/CSUBB/tree/master/4-MPP-web-bookstore">
           Systems for Design and Implementation
 	</a>
       </li>
       <li>
-        <a href="https://github.com/ErvinCs/AI">
+        <a href="https://github.com/ErvinCs/CSUBB/tree/master/4-AI-artifical-intelligence">
           Artificial Intelligence
 	</a>
       </li>
@@ -120,27 +120,27 @@
   <li>:open_file_folder: <b>Semester 5</b>
     <ul>
       <li> 
-        <a href="https://github.com/ErvinCs/LFTC-Lab04"> <!-- And Lab05 -->
+        <a href="https://github.com/ErvinCs/CSUBB/tree/master/5-LFTC-formal-languages-and-compiler-design">
           Formal Languages and Compiler Design
         </a>
       </li>
       <li> 
-        <a href="https://github.com/ErvinCs/graphics">
+        <a href="https://github.com/ErvinCs/CSUBB/tree/master/5-CG-computer-graphics">
           Computer Graphics
         </a>
       </li>
       <li> 
-        <a href="https://github.com/ErvinCs/sweater-mobile">
+        <a href="https://github.com/ErvinCs/CSUBB/tree/master/5-MP-sweater">
           Mobile Application Programming
         </a>
       </li>
       <li> 
-        <a href="https://github.com/ErvinCs/tracing-VR">
+        <a href="https://github.com/ErvinCs/CSUBB/tree/master/5-VR-ray-tracing">
           Virtual Reality
         </a>
       </li>
       <li> 
-        <a href="https://github.com/ErvinCs/PPD">
+        <a href="https://github.com/ErvinCs/CSUBB/tree/master/5-PPD-parallel-and-distributed-programming">
           Parallel and Distributed Programming
         </a>
       </li>
@@ -149,22 +149,22 @@
   <li>:open_file_folder: <b>Semester 6</b>
     <ul>
       <li> 
-          Game Development
-      </li>
-      <li> 
-        <a href="https://github.com/ErvinCs/TRSI">
+        <a href="https://github.com/ErvinCs/CSUBB/tree/master/6-TRSI-fi2pop">
           Implementation Techniques for Intelligent Systems
         </a>
       </li>
       <li> 
-        <a href="https://github.com/ErvinCs/NC">
+        <a href="https://github.com/ErvinCs/CSUBB/tree/master/6-NC-numerical-calculus">
           Numerical Calculus
         </a>
       </li>
       <li> 
-        <a href="https://github.com/ErvinCs/VVSS">
+        <a href="https://github.com/ErvinCs/CSUBB/tree/master/6-VVSS-sofware-systems-verification-and-validation">
           Software Systems Verification and Validation
         </a>
+      </li>
+	  <li> 
+          Game Development
       </li>
       <li> 
           Ethics in Computer Science
