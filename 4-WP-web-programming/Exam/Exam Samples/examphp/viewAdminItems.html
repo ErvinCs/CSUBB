@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Admin Items</title>
+    <meta content="text/html;charset=utf-8" http-equiv="Content-Type">
+    <script src="lib/jquery-2.0.3.js"></script>
+    <script lang="javascript">
+
+        function loadData(items) {
+            console.log(items);
+            $("#items-div").html('');
+            var size = items.length;
+            var tbl = document.createElement('table');
+            var tr;
+            tbl.setAttribute('id', 'itemTable');
+            tbl.classList.add("my-items");
+
+            tr = tbl.insertRow(0);
+
+            var thname = document.createElement('th');
+            thname.innerHTML = "Username";
+            tr.appendChild(thname);
+
+            var thprice = document.createElement('th');
+            thprice.innerHTML = "Item Count";
+            tr.appendChild(thprice);
+
+            var thcateg = document.createElement('th');
+            thcateg.innerHTML = "Total Item Value";
+            tr.appendChild(thcateg);
+
+            for(var i = 0; i < size; i++) {
+                console.log(items[i]);
+                tr = tbl.insertRow(i+1);
+                for (var column = 0; column < 3; column++) {
+                    var td = document.createElement('td');
+                    td = tr.insertCell(column);
+                    switch (column) {
+                        case 0:
+                            td.innerHTML = items[i].username;
+                            break;
+                        case 1:
+                            td.innerHTML = items[i].item_count;
+                            break;
+                        case 2:
+                            td.innerHTML = items[i].total_value;
+                            break;
+                    }
+                }
+
+            }
+
+            var section = document.getElementById('items-div');
+            section.appendChild(tbl);
+        }
+
+        $(document).ready(function() {
+            $("#show-items-btn").click(function () {
+                $.getJSON('controller.php',
+                    {
+                        action: 'getNoItemsPerUser'
+                    },
+                    loadData
+                );
+            });
+        });
+
+    </script>
+</head>
+<body>
+    <input id="show-items-btn" type="button" value="Show Items">
+    <div id="items-div">
+    </div>
+
+    <section>
+        <input id="back-btn" type="button" value="Items" onclick="document.location.href='viewItems.html'">
+        <br/>
+        <input id="log-out-btn" type="button" value="Log Out" onclick="document.location.href='logout.php'">
+        <br/>
+    </section>
+    <br/>
+</body>
+</html>

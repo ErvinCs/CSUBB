@@ -1,0 +1,30 @@
+     1                                  bits 32 
+     2                                  global start        
+     3                                  extern exit               
+     4                                  import exit msvcrt.dll    
+     5                                                            
+     6                                  segment data use32 class=data
+     7 00000000 010000000200000003-         a DD 1,2,3,4,5
+     7 00000009 000000040000000500-
+     7 00000012 0000               
+     8                                      len EQU ($-a)/4   
+     9                                      ; $-a = # of bytes from the segment definition until a's end
+    10                                      ; typeof(a) = DD so /4
+    11                                  
+    12                                  segment code use32 class=code
+    13                                      start:
+    14 00000000 B800000000                      MOV EAX, 0      ; sum
+    15 00000005 BE00000000                      MOV ESI, 0      ; id
+    16 0000000A B905000000                      MOV ECX, len
+    17 0000000F E30B                            JECXZ over_loop
+    18                                          loop1:
+    19 00000011 0386[00000000]                      ADD EAX, [a+ESI]
+    20 00000017 83C604                              ADD ESI, 4
+    21                                              ; alt1 - ADD EAX, [a+ESI*4]
+    22                                              ; alt1 - INC ESI
+    23 0000001A E2F5                                loop loop1
+    24                                          over_loop:
+    25                                              
+    26                                          
+    27 0000001C 6A00                            push    dword 0      
+    28 0000001E FF15[00000000]                  call    [exit]       

@@ -1,0 +1,33 @@
+[2018-06-10 17:20:00] [info] Start Program:
+Path:"C:\Users\asus\source\repos\MineSweeper\Debug\MineSweeper.exe"
+Arguments:
+Working directory: "C:\Users\asus\source\repos\MineSweeper\MineSweeper\"
+Modules: Selected: C:\Users\asus\source\repos\MineSweeper\Debug\MineSweeper.exe Excluded: 
+Sources: Selected: C:\Users\asus\source\repos\MineSweeper\MineSweeper Excluded: 
+Log Level: Normal
+Cover Children: 0
+Aggregate by file: 1
+Continue after C++ exception: 0
+Optimized build support: 0
+Export: Binary C:\Users\asus\AppData\Local\Temp\ghab0qok.fs2 
+Input coverage: 
+Unified diff: 
+Excluded line regular expressions: 
+
+[2018-06-10 17:20:00] [info] Module: C:\Users\asus\source\repos\MineSweeper\Debug\MineSweeper.exe is selected because it matches selected pattern: C:\Users\asus\source\repos\MineSweeper\Debug\MineSweeper.exe
+[2018-06-10 17:20:00] [info] Module: C:\Windows\SysWOW64\ntdll.dll is skipped because it matches no selected patterns
+[2018-06-10 17:20:00] [info] Module: C:\Windows\SysWOW64\kernel32.dll is skipped because it matches no selected patterns
+[2018-06-10 17:20:00] [info] Module: C:\Windows\SysWOW64\KernelBase.dll is skipped because it matches no selected patterns
+[2018-06-10 17:20:00] [info] Module: C:\Windows\SysWOW64\vcruntime140d.dll is skipped because it matches no selected patterns
+[2018-06-10 17:20:00] [info] Module: C:\Windows\SysWOW64\msvcp140d.dll is skipped because it matches no selected patterns
+[2018-06-10 17:20:00] [info] Module: C:\Windows\SysWOW64\ucrtbased.dll is skipped because it matches no selected patterns
+[2018-06-10 17:20:00] [info] Module: C:\Windows\SysWOW64\kernel.appcore.dll is skipped because it matches no selected patterns
+[2018-06-10 17:20:00] [info] Module: C:\Windows\SysWOW64\msvcrt.dll is skipped because it matches no selected patterns
+[2018-06-10 17:20:00] [info] Module: C:\Windows\SysWOW64\rpcrt4.dll is skipped because it matches no selected patterns
+[2018-06-10 17:20:00] [info] Module: C:\Windows\SysWOW64\sspicli.dll is skipped because it matches no selected patterns
+[2018-06-10 17:20:00] [info] Module: C:\Windows\SysWOW64\cryptbase.dll is skipped because it matches no selected patterns
+[2018-06-10 17:20:00] [info] Module: C:\Windows\SysWOW64\bcryptprimitives.dll is skipped because it matches no selected patterns
+[2018-06-10 17:20:00] [info] Module: C:\Windows\SysWOW64\sechost.dll is skipped because it matches no selected patterns
+[2018-06-10 17:20:00] [info] ----------------------------------------------------
+[2018-06-10 17:20:00] [info] Coverage binary generated in file: C:\Users\asus\AppData\Local\Temp\ghab0qok.fs2
+[2018-06-10 17:20:00] [info] ----------------------------------------------------

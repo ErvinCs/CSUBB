@@ -1,0 +1,63 @@
+     1                                  ; (a+b*c + 2/c) / (2+a) + e + x
+     2                                  ; a,b : byte
+     3                                  ; c : word
+     4                                  ; e : dWord
+     5                                  ; x : qWord
+     6                                  ; Signed
+     7                                  bits 32 
+     8                                  global start        
+     9                                  extern exit               
+    10                                  import exit msvcrt.dll    
+    11                                                            
+    12                                  segment data use32 class=data
+    13 00000000 01                          a DB 1
+    14 00000001 FF                          b DB -1
+    15 00000002 AB00                        c DW 0xAB
+    16 00000004 34120000                    e DD 0x1234
+    17 00000008 1100000000000000            x DQ 17
+    18 00000010 00000000                    t DD 0
+    19                                  
+    20                                  segment code use32 class=code
+    21                                      start:
+    22 00000000 A0[01000000]                    MOV AL, [b]     ; AL = b
+    23 00000005 6698                            CBW             ; AX = b
+    24 00000007 66F72D[02000000]                IMUL WORD [c]   ; DX:AX = b*c
+    25                                          
+    26 0000000E 66A3[10000000]                  MOV [t], AX
+    27 00000014 668915[12000000]                MOV [t+2], DX   ; t = DX:AX = b*c
+    28                                          
+    29 0000001B 66B80200                        MOV AX, 2       ; AX = 2
+    30 0000001F 6699                            CWD             ; DX:AX = 2
+    31 00000021 66F73D[02000000]                IDIV WORD [c]   ; AX = 2/c
+    32                                                          ; DX = 2%c
+    33 00000028 98                              CWDE            ; EAX = 2/c
+    34                                          
+    35 00000029 0305[10000000]                  ADD EAX, [t]    ; EAX = 2/c + b*c
+    36 0000002F 89C3                            MOV EBX, EAX    ; EBX = 2/c + b*c
+    37                                          
+    38 00000031 A0[00000000]                    MOV AL, [a]
+    39 00000036 6698                            CBW
+    40 00000038 98                              CWDE            ; EAX = a
+    41 00000039 01C3                            ADD EBX, EAX    ; EBX = (a + b*c + 2/c)
+    42                                          
+    43 0000003B A0[00000000]                    MOV AL, [a]
+    44 00000040 6698                            CBW
+    45 00000042 6683C002                        ADD AX, 2       ; AX = (a+2)
+    46 00000046 6689C1                          MOV CX, AX      ; CX = (a+2)
+    47                                          
+    48 00000049 891D[10000000]                  MOV [t], EBX
+    49 0000004F 66A1[10000000]                  MOV AX, [t]
+    50 00000055 668B15[12000000]                MOV DX, [t+2]   ; DX:AX = (a + b*c + 2/c)
+    51                                          
+    52 0000005C 66F7F9                          IDIV CX         ; AX = (a + b*c + 2/c) / (a+2)
+    53                                                          ; DX = (a + b*c + 2/c) % (a+2)
+    54 0000005F 98                              CWDE            ; EAX = (a + b*c + 2/c) / (a+2)
+    55                                          
+    56 00000060 0305[04000000]                  ADD EAX, [e]    ; EAX = (a + b*c + 2/c) / (a+2) + e
+    57                                          
+    58 00000066 99                              CDQ             ; EDX:EAX = (a + b*c + 2/c) / (a+2) + e
+    59 00000067 0305[08000000]                  ADD EAX, [x]
+    60 0000006D 1315[0C000000]                  ADC EDX, [x+4]  ; EDX:EAX = (a + b*c + 2/c) / (a+2) + e + x
+    61                                          
+    62 00000073 6A00                            push    dword 0      
+    63 00000075 FF15[00000000]                  call    [exit]       

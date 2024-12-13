@@ -1,0 +1,42 @@
+     1                                  ; (c-b+a)-(d+a)
+     2                                  ; a : byte; b : word; c : double word; d : qword
+     3                                  ; Unsigned
+     4                                  ; Result: 0x64
+     5                                  bits 32 
+     6                                  global start        
+     7                                  extern exit               
+     8                                  import exit msvcrt.dll    
+     9                                                            
+    10                                  segment data use32 class=data
+    11 00000000 64                          a DB 100
+    12 00000001 2C01                        b DW 300
+    13 00000003 58020000                    c DD 600
+    14 00000007 C800000000000000            d DQ 200 
+    15 0000000F 00000000                    temp DD 0
+    16                                  
+    17                                  segment code use32 class=code
+    18                                      start:
+    19 00000000 83E100                          AND ECX, 00h
+    20 00000003 8B0D[03000000]                  MOV ECX, [c]
+    21                                          
+    22 00000009 662B0D[01000000]                SUB CX, [b]
+    23 00000010 020D[00000000]                  ADD CL, [a]
+    24                                          ;MOV DX, [c]
+    25                                          ;MOV AX, [c+2]   ; DX:AX = c
+    26                                          
+    27                                          ;SUB AX, [b]     ; DX:AX = c-b
+    28                                          ;ADD AX, [a]     ; DX:AX = c-b+a
+    29                                      
+    30 00000016 83E000                          AND EAX, 00h    ; EAX = 0
+    31 00000019 83E200                          AND EDX, 00h    ; EDX = 0
+    32                                          
+    33 0000001C A0[00000000]                    MOV AL, [a]     ; AL = a
+    34 00000021 0305[07000000]                  ADD EAX, [d]
+    35 00000027 1305[0B000000]                  ADC EAX, [d+4]  ; EAX:EDX = a+d
+    36                                          
+    37 0000002D 29C8                            SUB EAX, ECX    ; EAX:EDX = (c-b+a)-(d+a)
+    38                                          
+    39                                      
+    40                                          ; exit(0)
+    41 0000002F 6A00                            push    dword 0      
+    42 00000031 FF15[00000000]                  call    [exit]       

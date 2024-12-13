@@ -1,0 +1,49 @@
+     1                                  ; Caractere identice pe pozitii corespondente in cele 2 siruri
+     2                                  ; Print in consola
+     3                                  
+     4                                  bits 32 
+     5                                  global start        
+     6                                  extern exit, printf               
+     7                                  import exit msvcrt.dll
+     8                                  import printf msvcrt.dll    
+     9                                                            
+    10                                  segment data use32 class=data
+    11                                      ; Define a string to be used by prtnf
+    12 00000000 4E756D626572206F66-         str_format DB 'Number of identical characters: %d', 0   ; %d - decimal placeholder
+    12 00000009 206964656E74696361-
+    12 00000012 6C2063686172616374-
+    12 0000001B 6572733A20256400   
+    13 00000023 616E6120617265206D-         a DB 'ana are mere'
+    13 0000002C 657265             
+    14                                      lena EQU $-a    
+    15 0000002F 416E4120617245204D-         b DB 'AnA arE Mere'
+    15 00000038 657265             
+    16                                      lenv EQU $-b
+    17                                  
+    18                                  segment code use32 class=code
+    19                                      start:
+    20 00000000 BE[23000000]                    MOV ESI, a
+    21 00000005 BF[2F000000]                    MOV EDI, b
+    22 0000000A FC                              CLD 
+    23 0000000B B90C000000                      MOV ECX, lena
+    24                                          
+    25 00000010 E30B                            JECXZ end_prog
+    26 00000012 BB00000000                      MOV EBX, 0
+    27                                          loop1:
+    28 00000017 A6                                  CMPSB       ; CMP [ESI], [EDI]
+    29 00000018 7501                                JNE skip_inc
+    30 0000001A 43                                  INC EBX
+    31                                              skip_inc:
+    32 0000001B E2FA                                LOOP loop1
+    33                                          end_prog:
+    34                                  
+    35                                          ; printf(format, EBX)
+    36                                          ; Params must be on the stack. Params are placed (and searched for) on the stack from right-to-left
+    37 0000001D 53                              PUSH EBX        ; Push EBX on the stack
+    38 0000001E 68[00000000]                    PUSH str_format ; Push the char pointer (address) of the string on the stack
+    39 00000023 FF15[00000000]                  CALL [printf]   ; Cal printf with the pushed params
+    40                                          
+    41 00000029 83C408                          ADD ESP, 4*2    ; Pop 2 things of 4 bytes (2 double words) from the stack
+    42                                          
+    43 0000002C 6A00                            push dword 0      
+    44 0000002E FF15[00000000]                  call [exit]       

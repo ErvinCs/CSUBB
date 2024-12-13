@@ -1,0 +1,80 @@
+﻿@{
+    Layout = null;
+    var itemId = Request.QueryString.Get("itemId");
+    var name = Request.QueryString.Get("name"); ;
+    var desc = Request.QueryString.Get("description");
+    var val = Request.QueryString.Get("value");
+}
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>Item</title>
+    <script src="~/Scripts/jquery-3.3.1.js"></script>
+    <script lang="javascript">
+        $(document).ready(function () {
+            $("#main-btn").click(function () {
+                window.location.href = '../Main';
+            });
+            $("#log-out-btn").click(function () {
+                $.get("/Login/Logout",
+                    function (data, status) {
+                        window.location.href = '../Login';
+                    });
+            });
+
+            $("#update-btn").click(function () {
+                var thisItemId = $("#item_id").attr("value");
+                $.post('/Details/UpdateItem', {
+                    operation: 'update',
+                    itemId: thisItemId,
+                    name: $("#name").attr("value"),
+                    description: $("#desc").attr("value"),
+                    value: $("#value").attr("value")
+                });
+            });
+            $("#delete-btn").click(function () {
+                var thisItemId = $("#item_id").attr("value");
+                $.post('/Details/RemoveItem', {
+                    operation: 'delete',
+                    itemId: thisItemId
+                });
+            });
+            $('#name').on("input", function () {
+                $("#name").attr("value", this.value);
+            });
+            $('#desc').on("input", function () {
+                $("#desc").attr("value", this.value);
+            });
+            $('#value').on("input", function () {
+                $("#value").attr("value", this.value);
+            });
+        });
+
+    </script>
+</head>
+<body>
+    <h2>Item: #@itemId</h2>
+    <br />
+
+    <div>
+        <input id="name" type="text" value="@name">
+        <input id="desc" type="text" value="@desc">
+        <input id="value" type="text" value="@val">
+
+        <input id="update-btn" type="button" value="Update">
+        <br />
+        <input id="delete-btn" type="button" value="Delete">
+        <br />
+    </div>
+    <br />
+
+    <section>
+        <input id="main-btn" type="button" value="Items">
+        <br />
+        <input id="log-out-btn" type="button" value="Log Out">
+        <br />
+    </section>
+
+    <input type="hidden" id="item_id" name="item_id" value="@itemId">
+</body>
+</html>

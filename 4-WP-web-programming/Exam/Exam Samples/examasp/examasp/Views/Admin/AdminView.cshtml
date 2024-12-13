@@ -1,0 +1,48 @@
+﻿@{
+    Layout = null;
+}
+<!DOCTYPE html>
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>Admin Items</title>
+    <script src="~/Scripts/jquery-3.3.1.js"></script>
+    <script lang="javascript">
+
+
+        $(document).ready(function () {
+            $("#show-items-btn").click(function () {
+                $.get("/Admin/GetAllItemDetails",
+                    function (data, status) {
+                        $("#items-div").html(data);
+                    });
+            });
+            $("#log-out-btn").click(function () {
+                $.get("/Login/Logout",
+                    function (data, status) {
+                        window.location.href = '../Login';
+                    });
+            });
+            $("#main-btn").click(function () {
+                window.location.href = '../Main';
+            });
+        });
+
+    </script>
+</head>
+<body>
+    <input id="show-items-btn" type="button" value="Show Items">
+    <div id="items-div">
+    </div>
+
+    <section>
+        <input id="main-btn" type="button" value="Items">
+        <br />
+        <input id="log-out-btn" type="button" value="Log Out">
+        <br />
+    </section>
+
+
+    <br />
+</body>
+</html>

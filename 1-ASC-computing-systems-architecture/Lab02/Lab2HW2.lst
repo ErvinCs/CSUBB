@@ -1,0 +1,47 @@
+     1                                  ;(e+g)*2 / (a*c) + (h–f) + b*3
+     2                                  ; a,b,c : byte 
+     3                                  ; e,f,g,h : word
+     4                                  bits 32 
+     5                                  global start        
+     6                                  extern exit               
+     7                                  import exit msvcrt.dll    
+     8                                                            
+     9                                  segment data use32 class=data
+    10 00000000 0A                          a DB 10
+    11 00000001 C8                          b DB 200
+    12 00000002 0C                          c DB 12
+    13 00000003 0200                        const2 DW 2
+    14 00000005 6400                        e DW 100
+    15 00000007 0600                        f DW 6
+    16 00000009 3200                        g DW 50
+    17 0000000B 0600                        h DW 6  ; 5
+    18                                      ; Expected result: 300 / 120 + 0 + 200 * 3 = 2 + 600 = 602 = 0x025A
+    19                                  
+    20                                  segment code use32 class=code
+    21                                      start:
+    22 00000000 A0[00000000]                    MOV AL, [a]     ; AL = a
+    23 00000005 F625[02000000]                  MUL BYTE [c]    ; AX = a*c
+    24                                          
+    25 0000000B 6689C3                          MOV BX, AX      ; BX = a*c = 120
+    26                                          
+    27 0000000E 66A1[05000000]                  MOV AX, [e]           ; AX = e
+    28 00000014 660305[09000000]                ADD AX, [g]           ; AX = e+g
+    29 0000001B 66F725[03000000]                MUL WORD [const2]     ; DX:AX = (e+g)*2
+    30                                          
+    31 00000022 66F7F3                          DIV WORD BX     ; AX = DX:AX / BX = (e+g)*2 / (a*c) = 300 / 120 = 2
+    32                                                          ; DX = DX:AX % BX = (e+g)*2 % (a*c) = 300 % 120 = 60
+    33 00000025 6689C1                          MOV CX, AX      ; CX = AX = (e+g)*2 / (a*c) = 2
+    34                                          
+    35 00000028 668B1D[0B000000]                MOV BX, [h]     ; BX = h
+    36 0000002F 662B1D[07000000]                SUB BX, [f]     ; BX = h-f = 0
+    37                                          
+    38 00000036 B003                            MOV AL, 3       ; AL = b
+    39 00000038 F625[01000000]                  MUL BYTE [b]    ; AX = b*3 = 600 = 0x258
+    40                                          
+    41 0000003E 6601D9                          ADD CX, BX      ; CX = (e+g)*2 / (a*c) + (h-f)
+    42 00000041 6601C1                          ADD CX, AX      ; CX = (e+g)*2 / (a*c) + (h-f) + b*3
+    43                                          
+    44 00000044 6689C8                          MOV AX, CX
+    45                                          
+    46 00000047 6A00                            push    dword 0      
+    47 00000049 FF15[00000000]                  call    [exit]       

@@ -1,0 +1,14 @@
+repository = inMemory
+books =
+clients =
+rentals =
+
+repository = textFiles
+books = BookList.txt
+clients = ClientList.txt
+rentals = RentalList.txt
+
+repository = binaryFiles
+books = BookList.pickle
+clients = ClientList.pickle
+rentals = RentalList.pickle

@@ -1,0 +1,25 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 15
+VisualStudioVersion = 15.0.28010.2050
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Project-MPI", "Project-MPI\Project-MPI.csproj", "{82A3706C-E10A-4787-88B5-B972EBB6572E}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{82A3706C-E10A-4787-88B5-B972EBB6572E}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{82A3706C-E10A-4787-88B5-B972EBB6572E}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{82A3706C-E10A-4787-88B5-B972EBB6572E}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{82A3706C-E10A-4787-88B5-B972EBB6572E}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {C227A0B4-57E1-42B2-9C1D-A5BE3E5B576C}
+	EndGlobalSection
+EndGlobal

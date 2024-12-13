@@ -1,0 +1,50 @@
+     1                                  ; (a*a+b/c-1)/(b+c)+d-x; 
+     2                                  ; a,c : word; b : byte; d : doubleword; x : qword
+     3                                  ; Unsigned
+     4                                  ; Result: 1
+     5                                  bits 32 
+     6                                  global start        
+     7                                  extern exit               
+     8                                  import exit msvcrt.dll    
+     9                                                            
+    10                                  segment data use32 class=data
+    11 00000000 1400                        a DW 20
+    12 00000002 64                          b DB 100
+    13 00000003 3200                        c DW 50
+    14 00000005 F4010000                    d DD 500
+    15 00000009 F501000000000000            x DQ 501
+    16 00000011 00000000                    temp DD 0
+    17                                      
+    18                                  
+    19                                  segment code use32 class=code
+    20                                      start:    
+    21 00000000 66A1[00000000]                  MOV AX, [a]         ; AX = a
+    22 00000006 66F725[00000000]                MUL WORD [a]        ; DX:AX = a*a
+    23 0000000D 66A3[11000000]                  MOV [temp], AX
+    24 00000013 668915[13000000]                MOV [temp+2], DX    ; temp = a*a
+    25                                      
+    26 0000001A 66B80000                        MOV AX, 0
+    27 0000001E A0[02000000]                    MOV AL, [b]
+    28 00000023 66BA0000                        MOV DX, 0           ; DX:AX = b
+    29 00000027 66F735[03000000]                DIV WORD [c]        ; AX = b/c
+    30 0000002E 6683E801                        SUB AX, 1           ; AX = b/c - 1
+    31 00000032 660305[11000000]                ADD AX, [temp]
+    32 00000039 661315[13000000]                ADC DX, [temp+2]    ; DX:AX = a*a+b/c-1 = 401
+    33                                          
+    34 00000040 8A1D[02000000]                  MOV BL, [b]
+    35 00000046 B700                            MOV BH, 0
+    36 00000048 66031D[03000000]                ADD BX, [c]         ; BX = b+c = 150
+    37                                          
+    38 0000004F 66F7F3                          DIV WORD BX         ; AX = (a*a+b/c-1)/(b+c) = 2
+    39                                          
+    40 00000052 6689C2                          MOV DX, AX          ; DX = (a*a+b/c-1)/(b+c)
+    41 00000055 668B1D[05000000]                MOV BX, [d]
+    42 0000005C 668B0D[07000000]                MOV CX, [d+2]       ; CX:BX = d = 500
+    43 00000063 6601D3                          ADD BX, DX
+    44 00000066 6683D100                        ADC CX, 0           ; CX:BX = (a*a+b/c-1)/(b+c)+d
+    45                                          
+    46 0000006A 662B1D[09000000]                SUB BX, [x]
+    47 00000071 661B0D[0B000000]                SBB CX, [x+2]       ; CX:BX = (a*a+b/c-1)/(b+c)+d-x 
+    48                                          
+    49 00000078 6A00                            push    dword 0      
+    50 0000007A FF15[00000000]                  call    [exit]       

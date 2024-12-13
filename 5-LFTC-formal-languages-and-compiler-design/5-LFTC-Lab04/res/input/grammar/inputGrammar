@@ -1,0 +1,132 @@
+N:
+program decllist decl data_type struct stmtlist stmt assignstmt inputstmt outputstmt condstmt whilestmt expr arithexpr boolexpr
+E:
+const int char struct beginp endp read write if then else while do done && || ! true false + * - / % < <= == > >= ; ( ) [ ] { } q w e r t y u i o p a s d f g h j k l z x c v b n m Q W E R T Y U I O P A S D F G H J K L Z X C V B N M 0 1 2 3 4 5 6 7 8 9 _
+P:
+program -> beginp declist stmtlist endp
+decllist -> decl
+decllist -> decl decllist
+decl -> const data_type identifier ;
+decl -> data_type identifier ;
+data_type -> int
+data_type -> char
+data_type -> struct
+struct -> struct identifier { decllist }
+stmtlist -> stmt
+stmtlist -> stmt stmtlist
+stmt -> assignstmt ;
+stmt -> inputstmt ;
+stmt -> ouputstmt ;
+stmt -> condstmt ;
+stmt -> whilestmt ;
+assignstmt -> identifier = expr ;
+inputstmt -> read identifier ;
+ouputstmt -> write expr ;
+condstmt -> if boolexpr then stmtlist
+condstmt -> if boolexpr then stmtlist else stmtlist
+whilestmt -> while boolexpr do stmtlist done
+expr -> arithexpr
+expr -> boolexpr
+expr -> const
+expr -> identifier
+arithexpr -> expr arith_operator expr
+boolexpr -> true
+boolexpr -> false
+boolexpr -> expr cond_operator expr
+boolexpr -> ! expr
+boolexpr -> expr logic_operator expr
+arith_operator -> +
+arith_operator -> -
+arith_operator -> *
+arith_operator -> /
+arith_operator -> %
+cond_operator -> <
+cond_operator -> <=
+cond_operator -> ==
+cond_operator -> >=
+assign_operator -> =
+logic_operator -> &&
+logic_operator -> ||
+identifier -> letter
+identifier -> letter identifier
+identifier -> letter number identifier
+letter -> _
+letter -> Q
+letter -> W
+letter -> E
+letter -> R
+letter -> T
+letter -> Y
+letter -> U
+letter -> I
+letter -> O
+letter -> P
+letter -> A
+letter -> S
+letter -> D
+letter -> F
+letter -> G
+letter -> H
+letter -> J
+letter -> K
+letter -> L
+letter -> Z
+letter -> X
+letter -> C
+letter -> V
+letter -> B
+letter -> N
+letter -> M
+letter -> q
+letter -> w
+letter -> e
+letter -> r
+letter -> t
+letter -> y
+letter -> u
+letter -> i
+letter -> o
+letter -> p
+letter -> a
+letter -> s
+letter -> d
+letter -> f
+letter -> g
+letter -> h
+letter -> j
+letter -> k
+letter -> l
+letter -> z
+letter -> x
+letter -> c
+letter -> v
+letter -> b
+letter -> n
+letter -> m
+number -> digit
+number -> nonzero digit
+number -> nonzero digit number
+digit -> zero
+digit -> nonzero
+nonzero -> 1
+nonzero -> 2
+nonzero -> 3
+nonzero -> 4
+nonzero -> 5
+nonzero -> 6
+nonzero -> 7
+nonzero -> 8
+nonzero -> 9
+zero -> 0
+const -> zero
+const -> nonzero
+const -> - nonzero
+const -> number
+const -> - number
+number -> digit
+number -> nonzero digit
+number -> nonzero digit number
+char -> letter
+char -> digit
+S:
+beginp

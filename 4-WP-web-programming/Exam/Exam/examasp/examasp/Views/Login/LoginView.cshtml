@@ -1,0 +1,89 @@
+﻿@{
+    Layout = null;
+}
+<!DOCTYPE html>
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>Login</title>
+    <script src="~/Scripts/jquery-3.3.1.js"></script>
+    <script lang="javascript">
+        $(document).ready(function () {
+            $("#login-btn").click(function () {
+                $.get("/Login/GetUserByCredentials",
+                    { username: $("#username").val(), password: $("#password").val() },
+                    function (data, status) {
+                        if (data == "0") {
+                            console.log("Login failed, status:" + data);
+                            $("#status").html("Invalid Credentials!");
+                        } else {
+                            console.log("Login success!");
+                            window.location.href = '../Main';
+                        }
+                    });
+            });
+            $("#register-btn").click(function () {
+                $.get("/Login/RegisterUser",
+                    { username: $("#username").val(), password: $("#password").val() },
+                    function (data, status) {
+                        if (data == "0") {
+                            console.log("Registration failed, status:" + data);
+                            $("#status").html("A user with this Username already exists!");
+                        } else {
+                            console.log("Regitration success!");
+                            window.location.href = '../Main';
+                        }
+                    });
+            });
+        });
+    </script>
+    <style>
+        .login-box {
+            margin-left: 40%;
+            margin-top: 10%;
+            margin-right: 40%;
+            width: 300px;
+            border-radius: 10px;
+            border: 1px solid #222;
+            padding: 10px;
+        }
+
+            .login-box h3 {
+                text-align: center;
+                color: #222;
+            }
+
+            .login-box input {
+                width: 100%;
+                font-size: 16px;
+                margin-bottom: 30px;
+                color: #222;
+            }
+
+            .login-box label {
+                color: #222;
+            }
+    </style>
+</head>
+<body>
+    <div class="login-box">
+        <h3>Login</h3>
+
+        <label>Username: </label>
+        <input type="text" name="username" id="username" />
+
+        <br />
+
+        <label>Password:</label>
+        <input type="password" name="password" id="password" />
+
+        <br />
+
+        <button type="button" id="login-btn">Login</button>
+        <button type="button" id="register-btn">Register</button>
+
+        <div id="status"></div> <br />
+    </div>
+</body>
+</html>
+

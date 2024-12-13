@@ -1,0 +1,1150 @@
+ID: 0
+ExeStack:
+-> v=10
+-> (Fork((v=v-1;(v=v-1;print(v))));(SLEEP(10);print(v*10)))
+SymTable:
+Out:
+FileTable:
+Heap:
+------------------------------------------
+ID: 0
+ExeStack:
+-> (Fork((v=v-1;(v=v-1;print(v))));(SLEEP(10);print(v*10)))
+SymTable:
+-> Key: v, Value: 10
+Out:
+FileTable:
+Heap:
+------------------------------------------
+ID: 0
+ExeStack:
+-> Fork((v=v-1;(v=v-1;print(v))))
+-> (SLEEP(10);print(v*10))
+SymTable:
+-> Key: v, Value: 10
+Out:
+FileTable:
+Heap:
+------------------------------------------
+ID: 0
+ExeStack:
+-> (SLEEP(10);print(v*10))
+SymTable:
+-> Key: v, Value: 10
+Out:
+FileTable:
+Heap:
+------------------------------------------
+ID: 1
+ExeStack:
+-> (v=v-1;(v=v-1;print(v)))
+SymTable:
+-> Key: v, Value: 10
+Out:
+FileTable:
+Heap:
+------------------------------------------
+ID: 0
+ExeStack:
+-> SLEEP(10)
+-> print(v*10)
+SymTable:
+-> Key: v, Value: 10
+Out:
+FileTable:
+Heap:
+------------------------------------------
+ID: 1
+ExeStack:
+-> v=v-1
+-> (v=v-1;print(v))
+SymTable:
+-> Key: v, Value: 10
+Out:
+FileTable:
+Heap:
+------------------------------------------
+ID: 0
+ExeStack:
+-> SLEEP(9)
+-> print(v*10)
+SymTable:
+-> Key: v, Value: 10
+Out:
+FileTable:
+Heap:
+------------------------------------------
+ID: 1
+ExeStack:
+-> (v=v-1;print(v))
+SymTable:
+-> Key: v, Value: 9
+Out:
+FileTable:
+Heap:
+------------------------------------------
+ID: 0
+ExeStack:
+-> SLEEP(8)
+-> print(v*10)
+SymTable:
+-> Key: v, Value: 10
+Out:
+FileTable:
+Heap:
+------------------------------------------
+ID: 1
+ExeStack:
+-> v=v-1
+-> print(v)
+SymTable:
+-> Key: v, Value: 9
+Out:
+FileTable:
+Heap:
+------------------------------------------
+ID: 0
+ExeStack:
+-> SLEEP(7)
+-> print(v*10)
+SymTable:
+-> Key: v, Value: 10
+Out:
+FileTable:
+Heap:
+------------------------------------------
+ID: 1
+ExeStack:
+-> print(v)
+SymTable:
+-> Key: v, Value: 8
+Out:
+FileTable:
+Heap:
+------------------------------------------
+ID: 0
+ExeStack:
+-> SLEEP(6)
+-> print(v*10)
+SymTable:
+-> Key: v, Value: 10
+Out:
+-> 8
+FileTable:
+Heap:
+------------------------------------------
+ID: 1
+ExeStack:
+SymTable:
+-> Key: v, Value: 8
+Out:
+-> 8
+FileTable:
+Heap:
+------------------------------------------
+ID: 0
+ExeStack:
+-> SLEEP(5)
+-> print(v*10)
+SymTable:
+-> Key: v, Value: 10
+Out:
+-> 8
+FileTable:
+Heap:
+------------------------------------------
+ID: 0
+ExeStack:
+-> SLEEP(4)
+-> print(v*10)
+SymTable:
+-> Key: v, Value: 10
+Out:
+-> 8
+FileTable:
+Heap:
+------------------------------------------
+ID: 0
+ExeStack:
+-> SLEEP(3)
+-> print(v*10)
+SymTable:
+-> Key: v, Value: 10
+Out:
+-> 8
+FileTable:
+Heap:
+------------------------------------------
+ID: 0
+ExeStack:
+-> SLEEP(2)
+-> print(v*10)
+SymTable:
+-> Key: v, Value: 10
+Out:
+-> 8
+FileTable:
+Heap:
+------------------------------------------
+ID: 0
+ExeStack:
+-> SLEEP(1)
+-> print(v*10)
+SymTable:
+-> Key: v, Value: 10
+Out:
+-> 8
+FileTable:
+Heap:
+------------------------------------------
+ID: 0
+ExeStack:
+-> SLEEP(0)
+-> print(v*10)
+SymTable:
+-> Key: v, Value: 10
+Out:
+-> 8
+FileTable:
+Heap:
+------------------------------------------
+ID: 0
+ExeStack:
+-> print(v*10)
+SymTable:
+-> Key: v, Value: 10
+Out:
+-> 8
+FileTable:
+Heap:
+------------------------------------------
+ID: 0
+ExeStack:
+SymTable:
+-> Key: v, Value: 10
+Out:
+-> 8
+-> 100
+FileTable:
+Heap:
+------------------------------------------
+ID: 0
+ExeStack:
+-> v=10
+-> (Fork((v=v-1;(v=v-1;print(v))));(SLEEP(10);print(v*10)))
+SymTable:
+Out:
+FileTable:
+Heap:
+------------------------------------------
+ID: 0
+ExeStack:
+-> (Fork((v=v-1;(v=v-1;print(v))));(SLEEP(10);print(v*10)))
+SymTable:
+-> Key: v, Value: 10
+Out:
+FileTable:
+Heap:
+------------------------------------------
+ID: 0
+ExeStack:
+-> Fork((v=v-1;(v=v-1;print(v))))
+-> (SLEEP(10);print(v*10))
+SymTable:
+-> Key: v, Value: 10
+Out:
+FileTable:
+Heap:
+------------------------------------------
+ID: 0
+ExeStack:
+-> (SLEEP(10);print(v*10))
+SymTable:
+-> Key: v, Value: 10
+Out:
+FileTable:
+Heap:
+------------------------------------------
+ID: 1
+ExeStack:
+-> (v=v-1;(v=v-1;print(v)))
+SymTable:
+-> Key: v, Value: 10
+Out:
+FileTable:
+Heap:
+------------------------------------------
+ID: 0
+ExeStack:
+-> SLEEP(10)
+-> print(v*10)
+SymTable:
+-> Key: v, Value: 10
+Out:
+FileTable:
+Heap:
+------------------------------------------
+ID: 1
+ExeStack:
+-> v=v-1
+-> (v=v-1;print(v))
+SymTable:
+-> Key: v, Value: 10
+Out:
+FileTable:
+Heap:
+------------------------------------------
+ID: 0
+ExeStack:
+-> SLEEP(9)
+-> print(v*10)
+SymTable:
+-> Key: v, Value: 10
+Out:
+FileTable:
+Heap:
+------------------------------------------
+ID: 1
+ExeStack:
+-> (v=v-1;print(v))
+SymTable:
+-> Key: v, Value: 9
+Out:
+FileTable:
+Heap:
+------------------------------------------
+ID: 0
+ExeStack:
+-> SLEEP(8)
+-> print(v*10)
+SymTable:
+-> Key: v, Value: 10
+Out:
+FileTable:
+Heap:
+------------------------------------------
+ID: 1
+ExeStack:
+-> v=v-1
+-> print(v)
+SymTable:
+-> Key: v, Value: 9
+Out:
+FileTable:
+Heap:
+------------------------------------------
+ID: 0
+ExeStack:
+-> SLEEP(7)
+-> print(v*10)
+SymTable:
+-> Key: v, Value: 10
+Out:
+FileTable:
+Heap:
+------------------------------------------
+ID: 1
+ExeStack:
+-> print(v)
+SymTable:
+-> Key: v, Value: 8
+Out:
+FileTable:
+Heap:
+------------------------------------------
+ID: 0
+ExeStack:
+-> SLEEP(6)
+-> print(v*10)
+SymTable:
+-> Key: v, Value: 10
+Out:
+-> 8
+FileTable:
+Heap:
+------------------------------------------
+ID: 1
+ExeStack:
+SymTable:
+-> Key: v, Value: 8
+Out:
+-> 8
+FileTable:
+Heap:
+------------------------------------------
+ID: 0
+ExeStack:
+-> SLEEP(5)
+-> print(v*10)
+SymTable:
+-> Key: v, Value: 10
+Out:
+-> 8
+FileTable:
+Heap:
+------------------------------------------
+ID: 0
+ExeStack:
+-> SLEEP(4)
+-> print(v*10)
+SymTable:
+-> Key: v, Value: 10
+Out:
+-> 8
+FileTable:
+Heap:
+------------------------------------------
+ID: 0
+ExeStack:
+-> SLEEP(3)
+-> print(v*10)
+SymTable:
+-> Key: v, Value: 10
+Out:
+-> 8
+FileTable:
+Heap:
+------------------------------------------
+ID: 0
+ExeStack:
+-> SLEEP(2)
+-> print(v*10)
+SymTable:
+-> Key: v, Value: 10
+Out:
+-> 8
+FileTable:
+Heap:
+------------------------------------------
+ID: 0
+ExeStack:
+-> SLEEP(1)
+-> print(v*10)
+SymTable:
+-> Key: v, Value: 10
+Out:
+-> 8
+FileTable:
+Heap:
+------------------------------------------
+ID: 0
+ExeStack:
+-> SLEEP(0)
+-> print(v*10)
+SymTable:
+-> Key: v, Value: 10
+Out:
+-> 8
+FileTable:
+Heap:
+------------------------------------------
+ID: 0
+ExeStack:
+-> print(v*10)
+SymTable:
+-> Key: v, Value: 10
+Out:
+-> 8
+FileTable:
+Heap:
+------------------------------------------
+ID: 0
+ExeStack:
+SymTable:
+-> Key: v, Value: 10
+Out:
+-> 8
+-> 100
+FileTable:
+Heap:
+------------------------------------------
+ID: 0
+ExeStack:
+-> v=10
+-> (Fork((v=v-1;(v=v-1;print(v))));(SLEEP(10);print(v*10)))
+SymTable:
+Out:
+FileTable:
+Heap:
+------------------------------------------
+ID: 0
+ExeStack:
+-> (Fork((v=v-1;(v=v-1;print(v))));(SLEEP(10);print(v*10)))
+SymTable:
+-> Key: v, Value: 10
+Out:
+FileTable:
+Heap:
+------------------------------------------
+ID: 0
+ExeStack:
+-> Fork((v=v-1;(v=v-1;print(v))))
+-> (SLEEP(10);print(v*10))
+SymTable:
+-> Key: v, Value: 10
+Out:
+FileTable:
+Heap:
+------------------------------------------
+ID: 0
+ExeStack:
+-> (SLEEP(10);print(v*10))
+SymTable:
+-> Key: v, Value: 10
+Out:
+FileTable:
+Heap:
+------------------------------------------
+ID: 1
+ExeStack:
+-> (v=v-1;(v=v-1;print(v)))
+SymTable:
+-> Key: v, Value: 10
+Out:
+FileTable:
+Heap:
+------------------------------------------
+ID: 0
+ExeStack:
+-> SLEEP(10)
+-> print(v*10)
+SymTable:
+-> Key: v, Value: 10
+Out:
+FileTable:
+Heap:
+------------------------------------------
+ID: 1
+ExeStack:
+-> v=v-1
+-> (v=v-1;print(v))
+SymTable:
+-> Key: v, Value: 10
+Out:
+FileTable:
+Heap:
+------------------------------------------
+ID: 0
+ExeStack:
+-> SLEEP(9)
+-> print(v*10)
+SymTable:
+-> Key: v, Value: 10
+Out:
+FileTable:
+Heap:
+------------------------------------------
+ID: 1
+ExeStack:
+-> (v=v-1;print(v))
+SymTable:
+-> Key: v, Value: 9
+Out:
+FileTable:
+Heap:
+------------------------------------------
+ID: 0
+ExeStack:
+-> SLEEP(8)
+-> print(v*10)
+SymTable:
+-> Key: v, Value: 10
+Out:
+FileTable:
+Heap:
+------------------------------------------
+ID: 1
+ExeStack:
+-> v=v-1
+-> print(v)
+SymTable:
+-> Key: v, Value: 9
+Out:
+FileTable:
+Heap:
+------------------------------------------
+ID: 0
+ExeStack:
+-> SLEEP(7)
+-> print(v*10)
+SymTable:
+-> Key: v, Value: 10
+Out:
+FileTable:
+Heap:
+------------------------------------------
+ID: 1
+ExeStack:
+-> print(v)
+SymTable:
+-> Key: v, Value: 8
+Out:
+FileTable:
+Heap:
+------------------------------------------
+ID: 0
+ExeStack:
+-> SLEEP(6)
+-> print(v*10)
+SymTable:
+-> Key: v, Value: 10
+Out:
+-> 8
+FileTable:
+Heap:
+------------------------------------------
+ID: 1
+ExeStack:
+SymTable:
+-> Key: v, Value: 8
+Out:
+-> 8
+FileTable:
+Heap:
+------------------------------------------
+ID: 0
+ExeStack:
+-> SLEEP(5)
+-> print(v*10)
+SymTable:
+-> Key: v, Value: 10
+Out:
+-> 8
+FileTable:
+Heap:
+------------------------------------------
+ID: 0
+ExeStack:
+-> SLEEP(4)
+-> print(v*10)
+SymTable:
+-> Key: v, Value: 10
+Out:
+-> 8
+FileTable:
+Heap:
+------------------------------------------
+ID: 0
+ExeStack:
+-> SLEEP(3)
+-> print(v*10)
+SymTable:
+-> Key: v, Value: 10
+Out:
+-> 8
+FileTable:
+Heap:
+------------------------------------------
+ID: 0
+ExeStack:
+-> SLEEP(2)
+-> print(v*10)
+SymTable:
+-> Key: v, Value: 10
+Out:
+-> 8
+FileTable:
+Heap:
+------------------------------------------
+ID: 0
+ExeStack:
+-> SLEEP(1)
+-> print(v*10)
+SymTable:
+-> Key: v, Value: 10
+Out:
+-> 8
+FileTable:
+Heap:
+------------------------------------------
+ID: 0
+ExeStack:
+-> SLEEP(0)
+-> print(v*10)
+SymTable:
+-> Key: v, Value: 10
+Out:
+-> 8
+FileTable:
+Heap:
+------------------------------------------
+ID: 0
+ExeStack:
+-> print(v*10)
+SymTable:
+-> Key: v, Value: 10
+Out:
+-> 8
+FileTable:
+Heap:
+------------------------------------------
+ID: 0
+ExeStack:
+SymTable:
+-> Key: v, Value: 10
+Out:
+-> 8
+-> 100
+FileTable:
+Heap:
+------------------------------------------
+ID: 0
+ExeStack:
+-> v=10
+-> (Fork((v=v-1;(v=v-1;print(v))));(SLEEP(10);print(v*10)))
+SymTable:
+Out:
+FileTable:
+Heap:
+------------------------------------------
+ID: 0
+ExeStack:
+-> (Fork((v=v-1;(v=v-1;print(v))));(SLEEP(10);print(v*10)))
+SymTable:
+-> Key: v, Value: 10
+Out:
+FileTable:
+Heap:
+------------------------------------------
+ID: 0
+ExeStack:
+-> Fork((v=v-1;(v=v-1;print(v))))
+-> (SLEEP(10);print(v*10))
+SymTable:
+-> Key: v, Value: 10
+Out:
+FileTable:
+Heap:
+------------------------------------------
+ID: 0
+ExeStack:
+-> (SLEEP(10);print(v*10))
+SymTable:
+-> Key: v, Value: 10
+Out:
+FileTable:
+Heap:
+------------------------------------------
+ID: 1
+ExeStack:
+-> (v=v-1;(v=v-1;print(v)))
+SymTable:
+-> Key: v, Value: 10
+Out:
+FileTable:
+Heap:
+------------------------------------------
+ID: 0
+ExeStack:
+-> SLEEP(10)
+-> print(v*10)
+SymTable:
+-> Key: v, Value: 10
+Out:
+FileTable:
+Heap:
+------------------------------------------
+ID: 1
+ExeStack:
+-> v=v-1
+-> (v=v-1;print(v))
+SymTable:
+-> Key: v, Value: 10
+Out:
+FileTable:
+Heap:
+------------------------------------------
+ID: 0
+ExeStack:
+-> SLEEP(9)
+-> print(v*10)
+SymTable:
+-> Key: v, Value: 10
+Out:
+FileTable:
+Heap:
+------------------------------------------
+ID: 1
+ExeStack:
+-> (v=v-1;print(v))
+SymTable:
+-> Key: v, Value: 9
+Out:
+FileTable:
+Heap:
+------------------------------------------
+ID: 0
+ExeStack:
+-> SLEEP(8)
+-> print(v*10)
+SymTable:
+-> Key: v, Value: 10
+Out:
+FileTable:
+Heap:
+------------------------------------------
+ID: 1
+ExeStack:
+-> v=v-1
+-> print(v)
+SymTable:
+-> Key: v, Value: 9
+Out:
+FileTable:
+Heap:
+------------------------------------------
+ID: 0
+ExeStack:
+-> SLEEP(7)
+-> print(v*10)
+SymTable:
+-> Key: v, Value: 10
+Out:
+FileTable:
+Heap:
+------------------------------------------
+ID: 1
+ExeStack:
+-> print(v)
+SymTable:
+-> Key: v, Value: 8
+Out:
+FileTable:
+Heap:
+------------------------------------------
+ID: 0
+ExeStack:
+-> SLEEP(6)
+-> print(v*10)
+SymTable:
+-> Key: v, Value: 10
+Out:
+-> 8
+FileTable:
+Heap:
+------------------------------------------
+ID: 1
+ExeStack:
+SymTable:
+-> Key: v, Value: 8
+Out:
+-> 8
+FileTable:
+Heap:
+------------------------------------------
+ID: 0
+ExeStack:
+-> SLEEP(5)
+-> print(v*10)
+SymTable:
+-> Key: v, Value: 10
+Out:
+-> 8
+FileTable:
+Heap:
+------------------------------------------
+ID: 0
+ExeStack:
+-> SLEEP(4)
+-> print(v*10)
+SymTable:
+-> Key: v, Value: 10
+Out:
+-> 8
+FileTable:
+Heap:
+------------------------------------------
+ID: 0
+ExeStack:
+-> SLEEP(3)
+-> print(v*10)
+SymTable:
+-> Key: v, Value: 10
+Out:
+-> 8
+FileTable:
+Heap:
+------------------------------------------
+ID: 0
+ExeStack:
+-> SLEEP(2)
+-> print(v*10)
+SymTable:
+-> Key: v, Value: 10
+Out:
+-> 8
+FileTable:
+Heap:
+------------------------------------------
+ID: 0
+ExeStack:
+-> SLEEP(1)
+-> print(v*10)
+SymTable:
+-> Key: v, Value: 10
+Out:
+-> 8
+FileTable:
+Heap:
+------------------------------------------
+ID: 0
+ExeStack:
+-> SLEEP(0)
+-> print(v*10)
+SymTable:
+-> Key: v, Value: 10
+Out:
+-> 8
+FileTable:
+Heap:
+------------------------------------------
+ID: 0
+ExeStack:
+-> print(v*10)
+SymTable:
+-> Key: v, Value: 10
+Out:
+-> 8
+FileTable:
+Heap:
+------------------------------------------
+ID: 0
+ExeStack:
+SymTable:
+-> Key: v, Value: 10
+Out:
+-> 8
+-> 100
+FileTable:
+Heap:
+------------------------------------------
+ID: 0
+ExeStack:
+-> v=10
+-> (Fork((v=v-1;(v=v-1;print(v))));(SLEEP(10);print(v*10)))
+SymTable:
+Out:
+FileTable:
+Heap:
+------------------------------------------
+ID: 0
+ExeStack:
+-> (Fork((v=v-1;(v=v-1;print(v))));(SLEEP(10);print(v*10)))
+SymTable:
+-> Key: v, Value: 10
+Out:
+FileTable:
+Heap:
+------------------------------------------
+ID: 0
+ExeStack:
+-> Fork((v=v-1;(v=v-1;print(v))))
+-> (SLEEP(10);print(v*10))
+SymTable:
+-> Key: v, Value: 10
+Out:
+FileTable:
+Heap:
+------------------------------------------
+ID: 0
+ExeStack:
+-> (SLEEP(10);print(v*10))
+SymTable:
+-> Key: v, Value: 10
+Out:
+FileTable:
+Heap:
+------------------------------------------
+ID: 1
+ExeStack:
+-> (v=v-1;(v=v-1;print(v)))
+SymTable:
+-> Key: v, Value: 10
+Out:
+FileTable:
+Heap:
+------------------------------------------
+ID: 0
+ExeStack:
+-> SLEEP(10)
+-> print(v*10)
+SymTable:
+-> Key: v, Value: 10
+Out:
+FileTable:
+Heap:
+------------------------------------------
+ID: 1
+ExeStack:
+-> v=v-1
+-> (v=v-1;print(v))
+SymTable:
+-> Key: v, Value: 10
+Out:
+FileTable:
+Heap:
+------------------------------------------
+ID: 0
+ExeStack:
+-> SLEEP(9)
+-> print(v*10)
+SymTable:
+-> Key: v, Value: 10
+Out:
+FileTable:
+Heap:
+------------------------------------------
+ID: 1
+ExeStack:
+-> (v=v-1;print(v))
+SymTable:
+-> Key: v, Value: 9
+Out:
+FileTable:
+Heap:
+------------------------------------------
+ID: 0
+ExeStack:
+-> SLEEP(8)
+-> print(v*10)
+SymTable:
+-> Key: v, Value: 10
+Out:
+FileTable:
+Heap:
+------------------------------------------
+ID: 1
+ExeStack:
+-> v=v-1
+-> print(v)
+SymTable:
+-> Key: v, Value: 9
+Out:
+FileTable:
+Heap:
+------------------------------------------
+ID: 0
+ExeStack:
+-> SLEEP(7)
+-> print(v*10)
+SymTable:
+-> Key: v, Value: 10
+Out:
+FileTable:
+Heap:
+------------------------------------------
+ID: 1
+ExeStack:
+-> print(v)
+SymTable:
+-> Key: v, Value: 8
+Out:
+FileTable:
+Heap:
+------------------------------------------
+ID: 0
+ExeStack:
+-> SLEEP(6)
+-> print(v*10)
+SymTable:
+-> Key: v, Value: 10
+Out:
+-> 8
+FileTable:
+Heap:
+------------------------------------------
+ID: 1
+ExeStack:
+SymTable:
+-> Key: v, Value: 8
+Out:
+-> 8
+FileTable:
+Heap:
+------------------------------------------
+ID: 0
+ExeStack:
+-> SLEEP(5)
+-> print(v*10)
+SymTable:
+-> Key: v, Value: 10
+Out:
+-> 8
+FileTable:
+Heap:
+------------------------------------------
+ID: 0
+ExeStack:
+-> SLEEP(4)
+-> print(v*10)
+SymTable:
+-> Key: v, Value: 10
+Out:
+-> 8
+FileTable:
+Heap:
+------------------------------------------
+ID: 0
+ExeStack:
+-> SLEEP(3)
+-> print(v*10)
+SymTable:
+-> Key: v, Value: 10
+Out:
+-> 8
+FileTable:
+Heap:
+------------------------------------------
+ID: 0
+ExeStack:
+-> SLEEP(2)
+-> print(v*10)
+SymTable:
+-> Key: v, Value: 10
+Out:
+-> 8
+FileTable:
+Heap:
+------------------------------------------
+ID: 0
+ExeStack:
+-> SLEEP(1)
+-> print(v*10)
+SymTable:
+-> Key: v, Value: 10
+Out:
+-> 8
+FileTable:
+Heap:
+------------------------------------------
+ID: 0
+ExeStack:
+-> SLEEP(0)
+-> print(v*10)
+SymTable:
+-> Key: v, Value: 10
+Out:
+-> 8
+FileTable:
+Heap:
+------------------------------------------
+ID: 0
+ExeStack:
+-> print(v*10)
+SymTable:
+-> Key: v, Value: 10
+Out:
+-> 8
+FileTable:
+Heap:
+------------------------------------------
+ID: 0
+ExeStack:
+SymTable:
+-> Key: v, Value: 10
+Out:
+-> 8
+-> 100
+FileTable:
+Heap:
+------------------------------------------

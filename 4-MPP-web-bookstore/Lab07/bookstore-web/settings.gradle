@@ -1,0 +1,2 @@
+include ':bookstore-core'
+project(':bookstore-core').projectDir=new File(settingsDir,':bookstore-core')

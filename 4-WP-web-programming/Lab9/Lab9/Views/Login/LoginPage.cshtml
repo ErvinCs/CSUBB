@@ -1,0 +1,42 @@
+﻿@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>Login</title>
+    <script src="~/Scripts/jquery-3.3.1.js"></script>
+    <script>
+        $(document).ready(function () {
+            $("#login-btn").click(function () {
+                $.get("/Login/GetUserByCredentials", 
+                    { username: $("#username").val(), password: $("#password").val() },
+                    function (data, status) {
+                        if (data == "0") {
+                            console.log("Login failed, status:" + data);
+                            $("#status").html("Invalid Credentials!");
+                        } else {
+                            console.log("Login success!");
+                            window.location.href = '../Main';
+                        }
+                    });
+            });
+        });
+    </script>
+</head>
+<body>
+    <h3>Authentication</h3>
+
+    Username:  <br/>
+    <input type="text" id="username" /> <br/>
+    Password:  <br/>
+    <input type="password" id="password" /> <br/>
+
+    <button type="button" id="login-btn">Login</button>
+
+    <div id="status"></div> <br />
+</body>
+</html>

@@ -1,0 +1,3 @@
+﻿  Tests.cpp
+c:\users\asus\source\repos\minesweeper\minesweeper\tests.cpp(43): warning C4002: too many actual parameters for macro 'assert'
+  MineSweeper.vcxproj -> C:\Users\asus\source\repos\MineSweeper\Debug\MineSweeper.exe

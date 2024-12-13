@@ -1,0 +1,59 @@
+     1                                  ; Lab5 Problem26
+     2                                  ; S - byte string. 
+     3                                  ; Obtain the maximum of the elements found on the even positions and the minimum of the elements found on the odd positions of S. 
+     4                                  ;
+     5                                  ; Example:
+     6                                  ; S: 1, 4, 2, 3, 8, 4, 9, 5
+     7                                  ; max_poz_pare: 9
+     8                                  ; min_poz_impare: 3
+     9                                  ;
+    10                                  ; C-Code
+    11                                  ; for(i=0; i<len(s)/2; i+=2) {
+    12                                  ;   if(a[2*i] > max) 
+    13                                  ;       max = a[2*i]
+    14                                  ;   if(a[2*i+1] < min)
+    15                                  ;       min = a[2*i+1]
+    16                                  ;   if(len(s) % 2 == 1)
+    17                                  ;       if(a[len(s) - 1] > max)
+    18                                  ;            max = a[len(s)-1]
+    19                                  
+    20                                  bits 32 
+    21                                  global start        
+    22                                  extern exit               
+    23                                  import exit msvcrt.dll    
+    24                                                            
+    25                                  segment data use32 class=data
+    26 00000000 01020304050601              s DB 1, 2, 3, 4, 5, 6, 1
+    27                                      len EQU ($-s)
+    28                                  
+    29                                  segment code use32 class=code
+    30                                      start:
+    31 00000000 B907000000                      MOV ECX, len
+    32 00000005 BE00000000                      MOV ESI, 0
+    33 0000000A B0FF                            MOV AL, -1      ; min
+    34 0000000C B300                            MOV BL, 0       ; max
+    35                                          
+    36                                          loop1:
+    37 0000000E 3A9E[00000000]                      CMP BL, [s+ESI]
+    38 00000014 7306                                JAE skip1
+    39                                              ; BL < [s+ESI]
+    40 00000016 8A9E[00000000]                      MOV BL, [s+ESI]
+    41                                              ; end of string
+    42                                          skip1:
+    43 0000001C 49                                  DEC ECX
+    44 0000001D 83F900                              CMP ECX, 0
+    45 00000020 7416                                JE over_loop
+    46                                              ; minimum
+    47 00000022 46                                  INC ESI
+    48 00000023 3A86[00000000]                      cMP AL, [s+ESI]
+    49 00000029 7606                                JBE skip2
+    50 0000002B 8A86[00000000]                      MOV AL, [s+ESI]
+    51                                          skip2:
+    52 00000031 46                                  INC ESI
+    53 00000032 49                                  DEC ECX
+    54 00000033 83F900                              CMP ECX, 0
+    55 00000036 75D6                                JNE loop1
+    56                                          over_loop:
+    57                                      
+    58 00000038 6A00                            push    dword 0      
+    59 0000003A FF15[00000000]                  call    [exit]       

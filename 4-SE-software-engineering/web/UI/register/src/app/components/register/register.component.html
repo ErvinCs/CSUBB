@@ -1,0 +1,125 @@
+<!-- TODO: for fuck sake, make the checks..... And display the warnings were we need some -->
+<div class='container col-md-12 col-sm-12 col-xs-12'>
+  <div class="py-5 bg-light">
+    <div class="container">
+      <div class="row">
+        <div class="my-3 col-md-12">
+          <div class="row">
+            <div class="col-md-6">
+              <img class="img-fluid d-block" src="assets/63f9fa0baa7992c7e28959256aca3d4c.png">
+            </div>
+            <form #f='ngForm' class="col-md-6" (ngSubmit)='onSubmit()'>
+              <h1 class="">Create an account:</h1>
+              <div class="row">
+                <div class="col-md-6">
+                  <input [(ngModel)]='person.firstName' type="text" name="firstName" class="form-control m-1" placeholder="First Name" required="required"> </div>
+                <div class="col-md-6">
+                  <input [(ngModel)]='person.lastName' type="text" name="lastName" class="form-control m-1" placeholder="Last Name" required="required"> </div>
+              </div>
+              <div class="row">
+                <div class="col-md-4">
+                  <input [(ngModel)]='person.birthday.day' type="number" name="day" class="form-control m-1" placeholder="Day" required="required"> </div>
+                <div class="col-md-4">
+                  <input [(ngModel)]='person.birthday.month' type="number" name="month" class="form-control m-1" placeholder="Month" required="required"> </div>
+                <div class="col-md-4">
+                  <div class="row">
+                    <div class="col-md-12">
+                      <input [(ngModel)]='person.birthday.year' type="number" name="year" class="form-control m-1" placeholder="Year" required="required"> </div>
+                  </div>
+                </div>
+              </div>
+              <div class="row">
+                <div class="col-md-12">
+                  <input [(ngModel)]='person.address.street' type="text" name="address" class="form-control m-1" placeholder="Address" required="required">
+                  <small class="form-text text-muted m-1">The one from your ID.</small>
+                </div>
+              </div>
+              <div class="row">
+                <div class="col-md-6">
+                  <input [(ngModel)]='person.address.city' type="text" name="city" class="form-control m-1" placeholder="City/Town" required="required"> </div>
+                <div class="col-md-6">
+                  <input [(ngModel)]='person.address.country' type="text" class="form-control m-1" placeholder="Country" required="required"
+                         name="country"> </div>
+              </div>
+              <div class="row">
+                <div class="col-md-12">
+                  <input [(ngModel)]='person.residence.street' type="text" name="residence" class="form-control m-1" placeholder="Residence">
+                  <small class="form-text text-muted">If you live at another address then the one in your ID.</small>
+                </div>
+              </div>
+              <div class="row">
+                <div class="col-md-6">
+                  <input [(ngModel)]='person.residence.city' type="text" name="city" class="form-control m-1" placeholder="City/Town"> </div>
+                <div class="col-md-6">
+                  <input [(ngModel)]='person.residence.country' type="text" class="form-control m-1" placeholder="Country" name="country"> </div>
+              </div>
+              <div class="row">
+                <div class="col-md-12">
+                  <input [(ngModel)]='person.username' type="text" class="form-control m-1" required="required" name="userName" placeholder="Username">
+                </div>
+              </div>
+              <div class="row">
+                <div class="col-md-6">
+                  <input [(ngModel)]='person.password' type="password" name="password" class="form-control m-1" placeholder="Password" required="required">
+                </div>
+                <div class="col-md-6">
+                  <input type="text" name="confirmPassword" class="form-control m-1" placeholder="Confirm Password" required="required"> </div>
+              </div>
+              <div class="row">
+                <div class="col-md-12">
+                  <input [(ngModel)]='person.cnp' type="text" name="cnp" class="form-control m-1" placeholder="CNP" required="required">
+                  <div class="row">
+                    <div class="col-md-12">
+                      <input [(ngModel)]='person.phoneNumber' type="text" name="phont" class="form-control m-1" placeholder="Phone Number" required="required"> </div>
+                  </div>
+                  <div class="row">
+                    <div class="col-md-12">
+                      <input [(ngModel)]='person.email' type="email" name="email" class="form-control m-1" required="required" placeholder="E-mail"> </div>
+                  </div>
+                  <div class="row">
+                    <div class="col-md-12">
+                      <label>
+                        <select [(ngModel)]='person.gender' class="form-control m-1" name="zxczx" required="required">
+                          <option value="male">Male</option>
+                          <option value="female">Female</option>
+                          <option value="na">Prefer not to say</option>
+                        </select>
+                      </label>
+                      <div class="row">
+                        <div class="col-md-6">
+                          <h1 class="display-4">&nbsp;
+                            <br> </h1>
+                        </div>
+                        <div class="col-md-6"></div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <div class="row">
+                  <div class="col-md-12">
+                    <label>
+                      <select [(ngModel)]='role' class="form-control m-1" name="zxczx" required="required">
+                        <option value="donor">Register for donation</option>
+                        <option value="doctor">Register as a doctor</option>
+                        <option value="dcp">Register as a Donation Center Personal</option>
+                      </select>
+                    </label>
+                  </div>
+                </div>
+                 <div class="row"> </div>
+                  <div class="row">
+                    <div class="col-md-6">
+                      <a class="btn btn-primary btn-lg" routerLink="/">Submit</a>
+                    </div>
+                  </div>
+              </div>
+            </form>
+            <!-- end of the main div -->
+            <!-- </form> -->
+          </div>
+        </div>
+      </div>
+    </div>
+
+  </div>
+</div>

@@ -1,0 +1,82 @@
+allprojects {
+    group 'brewcrew'
+    version '1.0-SNAPSHOT'
+
+    apply plugin: 'java'
+    apply plugin: 'war'
+
+    sourceCompatibility = 1.8
+
+    repositories {
+        mavenCentral()
+    }
+
+    ext {
+        springVersion = '5.0.5.RELEASE'
+        springDataVersion = '2.0.3.RELEASE'
+
+        postgresqlVersion = '42.2.1'
+        dbcpVersion = '2.2.0'
+
+        slf4jVersion = '1.7.25'
+        log4jVersion = '2.10.0'
+
+
+        hibernateVersion = '5.2.6.Final'
+        caffeineVersion = '2.6.1'
+        hikariVersion = '2.7.7'
+        jaxbapiVersion = '2.3.0'
+        tomcatversion = '9.0.8'
+
+        jacksonDatabindVersion = '2.9.4'
+        javaxServeletApiVersion = '3.1.0'
+
+        lombokVersion = '1.16.12'
+    }
+
+
+    dependencies {
+        testCompile group: 'junit', name: 'junit', version: '4.12'
+
+        //spring
+        compile group: 'org.springframework', name: 'spring-context', version: "$springVersion"
+        compile group: 'org.springframework', name: 'spring-web', version: "$springVersion"
+        compile group: 'org.springframework', name: 'spring-webmvc', version: "$springVersion"
+        compile group: 'org.springframework', name: 'spring-context-support', version: "$springVersion"
+        compile group: 'org.springframework', name: 'spring-orm', version: "$springVersion"
+        compile group: 'org.springframework.data', name: 'spring-data-jpa', version: "$springDataVersion"
+
+        //logging - slf4j
+        compile group: 'org.slf4j', name: 'slf4j-api', version: "$slf4jVersion"
+        testCompile group: 'org.slf4j', name: 'slf4j-simple', version: "$slf4jVersion"
+        //logging - log4j
+        compile group: 'org.apache.logging.log4j', name: 'log4j-slf4j-impl', version: "$log4jVersion"
+        compile group: 'org.apache.logging.log4j', name: 'log4j-core', version: "$log4jVersion"
+        compile group: 'org.apache.logging.log4j', name: 'log4j-1.2-api', version: "$log4jVersion"
+
+        //jackson
+        compile group: 'com.fasterxml.jackson.core', name: 'jackson-databind', version: "$jacksonDatabindVersion"
+        compile group: 'com.fasterxml.jackson.core', name: 'jackson-core', version: "$jacksonDatabindVersion"
+        compile group: 'com.fasterxml.jackson.core', name: 'jackson-annotations', version: "$jacksonDatabindVersion"
+
+        //javax
+        compile group: 'javax.servlet', name: 'javax.servlet-api', version: "$javaxServeletApiVersion"
+        compile group: 'javax.xml.bind', name: 'jaxb-api', version: "$jaxbapiVersion"
+
+        //lombok
+        compile group: 'org.projectlombok', name: 'lombok', version: "$lombokVersion"
+
+        //tomcat
+        compile group: 'org.apache.tomcat', name: 'tomcat-catalina', version: "$tomcatversion", ext: 'pom'
+
+        //persistence
+        compile group: 'org.hibernate', name: 'hibernate-core', version:"$hibernateVersion"
+        compile group: 'org.postgresql', name: 'postgresql', version: "$postgresqlVersion"
+        compile group: 'com.github.ben-manes.caffeine', name: 'caffeine', version: "$caffeineVersion"
+        compile group: 'com.zaxxer', name: 'HikariCP', version: "$hikariVersion"
+
+//        //compile project
+//        compile project(':bookstore-core')
+//        compile project(':bookstore-web')
+    }
+}

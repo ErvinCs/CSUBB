@@ -1,0 +1,19 @@
+beginp
+
+int no1 ;
+int no2   ;
+struct _ss {
+    char c1 ;
+    int no3 ;
+}
+
+no1 = 5 ;
+no2 = 10 ;
+
+if no1 > no2 then { write no1 ; }
+
+while no1 < no2 do { no1 = no1 + 1 ; } done ;
+
+if true then write no1 ;
+
+endp

@@ -1,0 +1,46 @@
+     1                                  ;Given the words A and B, compute the doubleword C as follows:
+     2                                  ; (1)   the bits 0-2 of C have the value 0
+     3                                  ; (2)   the bits 3-5 of C have the value 1
+     4                                  ; (3)   the bits 6-9 of C are the same as the bits 11-14 of A
+     5                                  ; (4)   the bits 10-15 of C are the same as the bits 1-6 of B
+     6                                  ; (5)   the bits 16-31 of C have the value 1
+     7                                  ; Problem 15
+     8                                  
+     9                                  bits 32 
+    10                                  global start        
+    11                                  extern exit               
+    12                                  import exit msvcrt.dll    
+    13                                                            
+    14                                  segment data use32 class=data
+    15 00000000 5555                        a DW 0101010101010101b
+    16 00000002 F0F0                        b DW 1111000011110000b
+    17                                      ; Expected: 1111 1111 1111 1111 1110 0010 1011 1000
+    18                                      
+    19                                  segment code use32 class=code
+    20                                      start:
+    21                                          ; (1)
+    22 00000000 BB00000000                      MOV EBX, 0
+    23                                          
+    24                                          ; (2)
+    25 00000005 6683CB38                        OR BX, 0000000000111000b    ; Set to 1 the bits on 3-5
+    26                                          
+    27                                          ; (3)
+    28 00000009 66A1[00000000]                  MOV AX, [a]     
+    29 0000000F 66250078                        AND AX, 0111100000000000b   ; Mask bits 11-14 in A
+    30 00000013 66C1E805                        SHR AX, 5                   ; Move the bits to positions 6-9
+    31 00000017 6609C3                          OR BX, AX
+    32                                          
+    33                                          ; (4)
+    34 0000001A 66A1[02000000]                  MOV AX, [b]
+    35 00000020 6683E07E                        AND AX, 0000000001111110b   ; Mask bits 1-6 in B
+    36 00000024 66C1E009                        SHL AX, 9
+    37 00000028 6609C3                          OR BX, AX
+    38                                          
+    39                                          ; (5)
+    40 0000002B 6689D8                          MOV AX, BX
+    41 0000002E C1E310                          SHL EBX, 16
+    42 00000031 66BBFFFF                        MOV BX, 0xFFFF
+    43                                          
+    44                                          ; exit(0)
+    45 00000035 6A00                            push    dword 0      
+    46 00000037 FF15[00000000]                  call    [exit]       

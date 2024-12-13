@@ -1,0 +1,102 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<ClassDiagram MajorVersion="1" MinorVersion="1">
+  <Class Name="GuiController&lt;T&gt;" Collapsed="true">
+    <Position X="8" Y="4.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>RCAAAABAATAACQBFgIOgAAgAiAkAACpARAQAAIIGgAA=</HashCode>
+      <FileName>GuiController.h</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Dog" Collapsed="true">
+    <Position X="11.5" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AgAAAEAAAAAAQAABACAABQAACAAWIABEAAAEABAAAgA=</HashCode>
+      <FileName>Dog.h</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="DogValidator" Collapsed="true">
+    <Position X="13.5" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>DogValidator.h</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="DogGui" Collapsed="true">
+    <Position X="8" Y="3.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>CBEBCQAAASQBQEgYA6AAEAIoMAoAAAKBggAAMCAgCAA=</HashCode>
+      <FileName>DogGui.h</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Database&lt;T&gt;" Collapsed="true">
+    <Position X="8" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAABAQMAAAAAEBAMABAEAgAEAAABABEBAAAIGgAg=</HashCode>
+      <FileName>Database.h</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="HtmlFileDatabase&lt;T&gt;" Collapsed="true">
+    <Position X="9" Y="1.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAABABAAAAAAAAAAAAAAAAAEAAAAAAAAAAAAAAAg=</HashCode>
+      <FileName>HtmlFileDatabase.h</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="TextFileDatabase&lt;T&gt;" Collapsed="true">
+    <Position X="6.75" Y="1.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAABAAAAAAAAAAAAAAAgAAAEAAAAAAAAAAAAAAAg=</HashCode>
+      <FileName>TextFileDatabase.h</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="UI&lt;T&gt;" Collapsed="true">
+    <Position X="3" Y="3.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAgAAAAAAAAAAAAAAgAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>UI.h</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="AdminUI" Collapsed="true">
+    <Position X="4" Y="4.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAgAAAAAEgAAEAAAAgQAAAAAAAAAAAAAAAAAmAAA=</HashCode>
+      <FileName>AdminUI.h</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="UserUI" Collapsed="true">
+    <Position X="1.75" Y="4.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>ggAAAgAAAAAAQAgAAAACgwAAAAAAAAAAAAAACAIAACA=</HashCode>
+      <FileName>UserUI.h</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="AscAgeComparator&lt;T&gt;" Collapsed="true">
+    <Position X="1.75" Y="1.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAQAA=</HashCode>
+      <FileName>AscAgeComparator.h</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="AscNameComparator&lt;T&gt;" Collapsed="true">
+    <Position X="4" Y="1.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAQAA=</HashCode>
+      <FileName>AscNameComparator.h</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Comparator&lt;T&gt;" Collapsed="true">
+    <Position X="3" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAQAA=</HashCode>
+      <FileName>Comparator.h</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="FileParser" Collapsed="true">
+    <Position X="12.5" Y="1.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAEAAAAAAAgAgAAAQAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>FileParser.h</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Font Name="Segoe UI" Size="9" />
+</ClassDiagram>

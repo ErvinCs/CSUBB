@@ -1,0 +1,82 @@
+Book 0: book0 - desc0 - author0
+Book 1: book1 - desc1 - author1
+Book 2: book2 - desc1 - author2
+Book 3: book3 - desc3 - author3
+Book 4: book31 - desc4 - author4
+Book 5: book3 - desc5 - author4
+Book 6: book6 - desc6 - author4
+Book 7: book1 - desc1 - author4
+Book 8: book8 - desc8 - author8
+Book 9: book9 - desc9 - author9
+Book 10: book10 - desc10 - author10
+Book 11: book11 - desc11 - author11
+Book 12: book12 - desc12 - author12
+Book 13: book13 - desc13 - author13
+Book 14: book14 - desc14 - author14
+Book 15: book15 - desc15 - author15
+Book 16: book16 - desc16 - author16
+Book 17: book17 - desc17 - author17
+Book 18: book18 - desc18 - author18
+Book 19: book19 - desc19 - author19
+Book 20: book20 - desc20 - author20
+Book 21: book21 - desc21 - author21
+Book 22: book22 - desc22 - author22
+Book 23: book23 - desc23 - author23
+Book 24: book24 - desc24 - author24
+Book 25: book25 - desc25 - author25
+Book 26: book26 - desc26 - author26
+Book 27: book27 - desc27 - author27
+Book 28: book28 - desc28 - author28
+Book 29: book29 - desc29 - author29
+Book 30: book30 - desc30 - author30
+Book 31: book31 - desc31 - author31
+Book 32: book32 - desc32 - author32
+Book 33: book33 - desc33 - author33
+Book 34: book34 - desc34 - author34
+Book 35: book35 - desc35 - author35
+Book 36: book36 - desc36 - author36
+Book 37: book37 - desc37 - author37
+Book 38: book38 - desc38 - author38
+Book 39: book39 - desc39 - author39
+----------------------------------------
+Client 0: name0
+Client 1: name1
+Client 2: name12
+Client 3: name2
+Client 4: name2
+Client 5: name5
+Client 6: name11
+Client 7: name3
+Client 8: name8
+Client 9: name9
+Client 10: name10
+Client 11: name11
+Client 12: name12
+Client 13: name13
+Client 14: name14
+Client 15: name15
+Client 16: name16
+Client 17: name17
+Client 18: name18
+Client 19: name19
+Client 20: name20
+Client 21: name21
+Client 22: name22
+Client 23: name23
+Client 24: name24
+Client 25: name25
+Client 26: name26
+Client 27: name27
+Client 28: name28
+Client 29: name29
+Client 30: name30
+Client 31: name31
+Client 32: name32
+Client 33: name33
+Client 34: name34
+Client 35: name35
+Client 36: name36
+Client 37: name37
+Client 38: name38
+Client 39: name39
+----------------------------

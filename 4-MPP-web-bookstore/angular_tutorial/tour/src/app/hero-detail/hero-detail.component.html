@@ -1,0 +1,13 @@
+<!-- Shows the div only if selectedHero is valid
+     The css deals with highlighting the selected -->
+<div *ngIf="hero">
+  <!-- Show the details of the selected hero at the bottom of the page -->
+  <h2>{{hero.name | uppercase}} Details</h2>
+  <div><span>id: </span>{{hero.id}}</div>
+  <div>
+    <label>name:
+      <input [(ngModel)]="hero.name" placeholder="name"/>
+    </label>
+  </div>
+  <button (click)="goBack()">go back</button>
+</div>

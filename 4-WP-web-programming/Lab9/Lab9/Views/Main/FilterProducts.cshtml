@@ -1,0 +1,77 @@
+﻿@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>FilterProducts</title>
+    <script src="~/Scripts/jquery-3.3.1.js"></script>
+    <script lang="javascript">
+
+        function checkCookie() {
+            if (document.cookie == null) {
+                window.location.href('../Login');
+            }
+        }
+        
+
+        $(document).ready(function(){
+            $("#display-btn").click(function() {
+                $.get("/Main/GetProductsByCategory", { category: $("#categories option:selected").val(), page: $("#pages option:selected").val()},
+                    function(data,status) {
+                        $("#maindiv").html(data);
+                    });
+            });
+            $("#maindiv").on('click', '#buy', function () {
+                $.get("Main/AddProductToCart", { name: $(this).closest('button').attr('name') },  
+                    function (data, status) {
+                        $("#cartdiv").html(data);
+                    });
+            });
+            $("#cartdiv").on('click', '#delete', function () {
+                $.get("Main/RemoveProductFromCart", { name: $(this).closest('button').attr('name') },
+                    function (data, status) {
+                        $("#cartdiv").html(data);
+                    });
+            });
+            $("#log-out-btn").click(function () {
+                $.get("/Main/Logout",
+                    function (data, status) {
+                        window.location.href = '../Login';
+                    });
+            });
+        });
+    </script>
+</head>
+<body onload="checkCookie">
+
+    <label for="category">Category: </label>
+    <select name="category" id="categories">
+        <option value="keyboards">keyboards</option>
+        <option value="mice">mice</option>
+        <option value="games">games</option>
+    </select>
+
+    <label for="page">Page: </label>
+    <select name="page" id="pages">
+        <option value="1">1</option>
+        <option value="2">2</option>
+    </select>
+
+    <input id="display-btn" type="button" value="Display" /> <br />
+
+    Products:
+    <div id="maindiv"></div><br />
+    <hr />
+
+    Cart:
+    <div id="cartdiv"></div><br />
+    <hr />
+
+    <input id="log-out-btn" type="button" value="log out" />
+</body>
+</html>
+

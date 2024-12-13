@@ -1,0 +1,11 @@
+C:\Users\csoka\IdeaProjects\PPD-Project\Pdp-Project\Project-MPI\Project-MPI\bin\Debug\Project-MPI.exe.config
+C:\Users\csoka\IdeaProjects\PPD-Project\Pdp-Project\Project-MPI\Project-MPI\bin\Debug\Project-MPI.exe
+C:\Users\csoka\IdeaProjects\PPD-Project\Pdp-Project\Project-MPI\Project-MPI\bin\Debug\Project-MPI.pdb
+C:\Users\csoka\IdeaProjects\PPD-Project\Pdp-Project\Project-MPI\Project-MPI\bin\Debug\MPI.dll
+C:\Users\csoka\IdeaProjects\PPD-Project\Pdp-Project\Project-MPI\Project-MPI\bin\Debug\MPIUtils.dll
+C:\Users\csoka\IdeaProjects\PPD-Project\Pdp-Project\Project-MPI\Project-MPI\bin\Debug\MPI.xml
+C:\Users\csoka\IdeaProjects\PPD-Project\Pdp-Project\Project-MPI\Project-MPI\obj\Debug\Project-MPI.csprojAssemblyReference.cache
+C:\Users\csoka\IdeaProjects\PPD-Project\Pdp-Project\Project-MPI\Project-MPI\obj\Debug\Project-MPI.csproj.CoreCompileInputs.cache
+C:\Users\csoka\IdeaProjects\PPD-Project\Pdp-Project\Project-MPI\Project-MPI\obj\Debug\Project-MPI.csproj.CopyComplete
+C:\Users\csoka\IdeaProjects\PPD-Project\Pdp-Project\Project-MPI\Project-MPI\obj\Debug\Project-MPI.exe
+C:\Users\csoka\IdeaProjects\PPD-Project\Pdp-Project\Project-MPI\Project-MPI\obj\Debug\Project-MPI.pdb

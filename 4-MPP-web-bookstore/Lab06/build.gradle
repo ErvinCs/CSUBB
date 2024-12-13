@@ -1,0 +1,36 @@
+allprojects {
+
+    group 'brewCrew'
+    version '1.0-SNAPSHOT'
+
+    apply plugin: 'java'
+
+    sourceCompatibility = 1.8
+
+    repositories {
+        mavenCentral()
+    }
+
+    ext {
+        springVersion = '5.0.3.RELEASE'
+        postgresqlVersion = '42.2.1'
+        dbcpVersion = '2.2.0'
+    }
+
+    dependencies {
+        testCompile group: 'junit', name: 'junit', version: '4.12'
+
+        compile group: 'org.springframework', name: 'spring-core', version: "$springVersion"
+        compile group: 'org.springframework', name: 'spring-context', version: "$springVersion"
+        compile group: 'org.springframework', name: 'spring-jdbc', version: "$springVersion"
+
+        compile group: 'org.springframework', name: 'spring-remoting', version: '2.0.8'
+
+        compile group: 'org.postgresql', name: 'postgresql', version: "$postgresqlVersion"
+
+        compile group: 'org.apache.commons', name: 'commons-dbcp2', version: "$dbcpVersion"
+
+        compile 'org.projectlombok:lombok:1.16.16'
+    }
+}
+

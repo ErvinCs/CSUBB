@@ -1,0 +1,4 @@
+beginp 
+int a
+read a
+endp 

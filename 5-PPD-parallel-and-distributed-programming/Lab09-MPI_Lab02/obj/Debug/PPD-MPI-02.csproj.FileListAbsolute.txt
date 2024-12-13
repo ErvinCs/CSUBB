@@ -1,0 +1,11 @@
+C:\Users\csoka\IdeaProjects\PPD-MPI-02\PPD-MPI-02\bin\Debug\PPD-MPI-02.exe.config
+C:\Users\csoka\IdeaProjects\PPD-MPI-02\PPD-MPI-02\bin\Debug\PPD-MPI-02.exe
+C:\Users\csoka\IdeaProjects\PPD-MPI-02\PPD-MPI-02\bin\Debug\PPD-MPI-02.pdb
+C:\Users\csoka\IdeaProjects\PPD-MPI-02\PPD-MPI-02\bin\Debug\MPI.dll
+C:\Users\csoka\IdeaProjects\PPD-MPI-02\PPD-MPI-02\bin\Debug\MPIUtils.dll
+C:\Users\csoka\IdeaProjects\PPD-MPI-02\PPD-MPI-02\bin\Debug\MPI.xml
+C:\Users\csoka\IdeaProjects\PPD-MPI-02\PPD-MPI-02\obj\Debug\PPD-MPI-02.csprojAssemblyReference.cache
+C:\Users\csoka\IdeaProjects\PPD-MPI-02\PPD-MPI-02\obj\Debug\PPD-MPI-02.csproj.CoreCompileInputs.cache
+C:\Users\csoka\IdeaProjects\PPD-MPI-02\PPD-MPI-02\obj\Debug\PPD-MPI-02.csproj.CopyComplete
+C:\Users\csoka\IdeaProjects\PPD-MPI-02\PPD-MPI-02\obj\Debug\PPD-MPI-02.exe
+C:\Users\csoka\IdeaProjects\PPD-MPI-02\PPD-MPI-02\obj\Debug\PPD-MPI-02.pdb

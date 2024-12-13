@@ -1,0 +1,19 @@
+body {
+    font-size: 24px;
+    text-align: center;
+}
+
+.link-container {
+    border-radius: 10px;
+    border: 1px solid #222;
+    margin-left: 40%;
+    margin-top: 10%;
+    margin-right: 40%;
+    padding: 10px;
+}
+
+.link-container a {
+    padding-bottom: 10px;
+    padding-top: 10px;
+    color: #222;
+}

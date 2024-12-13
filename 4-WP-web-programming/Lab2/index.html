@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>
+			Lab2 - CSS
+		</title>
+		<style>
+			body, html {
+				width: 100%;
+				height: 100%;
+			}
+			.button1 {
+				display: inline-block;
+    			text-decoration: none;
+			    color: #FFF;
+			    font-weight: bold;
+			    background-color: #538FBE;
+			    padding: 20px 70px;
+			    font-size: 24px;
+			    border: 2px solid #2D6898;
+			    border-radius: 10px;
+			    text-shadow: 0px -1px 0px rgba(0,0,0,0.5);   
+				box-shadow: 0px 6px 0px #2B638f, 0px 3px 15px rgba(0,0,0,.4);
+			}
+			.button1:hover {
+				background-color: #538fff;
+			}
+			.button1:active {
+				box-shadow: 0px 2px 0px #2b638f, 0px 1px 6px rgba(0,0,0,.4);
+				transform: translate(0, 4px);
+				transition: all .05s ease-in-out;
+			}
+			.button2 {
+				display: inline-block;
+				text-decoration-line: underline;
+				text-decoration-style: solid;
+				color: #FFF;
+				font-weight: bold;
+				background: linear-gradient(to right, #FA8072, #FA8072);
+  				background-repeat: no-repeat;
+  				background-size: 0 100%;
+  				transition: background-size 1s 0s;
+				background-color: #FF6666;
+				padding: 20px 70px;
+			    font-size: 24px;
+			    border: 2px solid #CD5C5C;
+			    border-radius: 50%; 
+			    box-shadow: 0px 6px 0px #B22222, 0px 3px 15px rgba(0,0,0,.4);
+			}
+			.button2:hover {
+				background-size: 100% 100%;
+			}
+			.button2:active {
+				box-shadow: 0px 2px 0px #B22222, 0px 1px 6px rgba(0,0,0,.4);
+				transform: translate(0, 4px);
+				transition: all .05s ease-in-out;
+			}
+
+			.grid-container {
+			  	display: grid;
+			  	grid-template-columns: auto auto auto auto;
+			  	grid-gap: 10px;
+			  	padding: 10px;
+			  	position: absolute;
+			 	top: 500px;
+			}
+
+			.hoverWrapper:hover #hoverShow {
+				display: block;
+			}
+
+			.hoverWrapper #hoverShow {
+				display: none;
+				position: fixed;
+  				top: 100px;
+  				left: 260px;
+  				right: 260px;
+				width: 400px;
+				height: 400px;
+			}
+			
+			.thumbnail {
+			  	border: 1px solid #000;
+			  	border-radius: 4px;
+			  	padding: 5px;
+			  	width:  200px;
+			 	height: 200px;
+			}
+
+			.thumbnail:hover {
+
+			  	box-shadow: 0 0 2px 1px rgba(0, 140, 186, 0.5);
+			}
+
+			
+
+
+			.imgWrapper {
+				position: static;
+  				top: 100px;
+  				left: 260px;
+  				right: 260px;
+				width: 400px;
+				height: 400px;
+			}
+
+
+		</style>
+	</head>
+
+	<body>
+		<!-- 1. 3D Buttons -->
+		<div>
+			<a href=# class="button1">Lab1</a> <!-- "../Lab1/index.html" -->
+			<a href=# class="button2">Lab1</a>
+		</div>
+		
+		<hr>
+		<!-- 14. Thumbnails + Large image -->
+
+		<!-- <img src="res/white.jpg" class="imgWrapper"> -->
+		<div class="grid-container">
+			<div class="hoverWrapper"> <img src="res/metrolastlight.jpg" class="thumbnail">
+				<div id="hoverShow">
+					<img src="res/metrolastlight.jpg" width="400" height="400">	
+				</div>
+			</div>
+			<div class="hoverWrapper"> <img src="res/oseara.jpg" class="thumbnail">
+				<div id="hoverShow">
+					<img src="res/oseara.jpg" width="400" height="400">
+				</div>
+			</div>
+			<div class="hoverWrapper"> <img src="res/metroexodus.jpg" class="thumbnail">
+				<div id="hoverShow">
+					<img src="res/metroexodus.jpg" width="400" height="400">
+				</div>
+			</div>
+			<div class="hoverWrapper"> <img src="res/life.jpg" class="thumbnail">
+				<div id="hoverShow">
+					<img src="res/life.jpg" width="400" height="400">
+				</div>
+			</div>				
+		</div>
+		<a name="#gallery"></a>
+	</body>
+</html>

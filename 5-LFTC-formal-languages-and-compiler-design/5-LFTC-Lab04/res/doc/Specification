@@ -1,0 +1,77 @@
+Language Specification:
+1 .Language Definition:
+    1.1. Alphabet:
+    1.1.  a. Upper (A-Z) and lower case letters (a-z) of the English alphabet
+          b. Underline character '_'
+          c. Decimal digits (0-9);
+    1.2. Lexic:
+    a. Special symbols, representing:
+            Arithmetic operators: +, -, *, /, %;
+            Conditional operators: <, <=, ==, =>, >;
+            Assignment operator: =;
+            Logic Operators: &&, ||,  !
+            Separators:  (, ), [, ], {, }, :, ;,  (whitespace);
+            Data types & qualifiers : int, char, struct, const;
+            Instructions: if, then, else, write, read, while, do, done, beginp, endp.
+    b. Identifiers
+        A sequence of letters and digits <= 8, such that the first character is a letter or '_' associated with a data type.
+    c. Constants
+        1.int
+        2.char
+        3.struct
+
+    2.2 Syntax: BNF
+    a. Sintactical rules:
+        <program> ::= "beginp" <declist> <stmtlist> "endp"
+        <decllist> ::= <decl>
+                            | <decl> <decllist>
+        <decl> ::= "const" <data_type> <identifier> ";"
+                            | <data_type> <identifier> ";"
+        <data_type> ::= "int"
+                                | "char"
+                                | <struct>
+        <struct> ::= "struct" <identifier> "{" <decllist> "}"
+        <stmtlist> ::= <stmt>
+                            | <stmt> <stmtlist>
+        <stmt> ::= <assignstmt> ";"
+                        | <inputstmt> ";"
+                        | <ouputstmt> ";"
+                        | <condstmt> ";"
+                        | <whilestmt> ";"
+        <assignstmt> ::= <identifier> "=" <expr> ";"
+        <inputstmt> ::= "read" <identifier> ";"
+        <ouputstmt> ::=   "write" <expr> ";"
+        <condstmt> ::= "if" <boolexpr> "then" <stmtlist> ["else" stmtlist]
+        <whilestmt> ::= "while" <boolexpr> "do" <stmtlist> "done"
+        <expr> ::= <arithexpr>
+                        | <boolexpr>
+                        | <const>
+                        | <identifier>
+        <arithexpr> ::= <expr> <arith_operator> <expr>
+        <boolexpr> ::= "true" | "false" | <expr> <cond_operator> <expr>
+
+    b. Lexical rules:
+            <arith_operator> ::= "+" | "-" | "*" | "/" | "%"
+            <cond_operator> ::= "<" | "<=" | "==" | ">="
+            <assign_operator> ::= "="
+            <logic_operator> ::= "&&" | "||" | "!"
+            <separator> ::= "[" | "]" | "{" | "}" | "(" | ")" | ":" | ";" | " "
+            <reserved> ::= "int" | "char" | "struct" | "const" | "if" | "then" | "else" | "write" | "read" | "while" | "do" | "done" | "beginp" | "endp"
+
+            <identifier> ::= <letter> | <letter> <identifier> | <letter> <number> <identifier>
+            <letter> ::= "_" | "A" | "B" | ... | "Z" | "a" | "b" | ... | "z"
+            <number> ::= <digit> | <nonzero> <digit> | <nonzero> <digit> <number>
+            <digit> ::= <zero> | <nonzero>
+            <nonzero> ::= "1" | ... | "9"
+            <zero> ::= "0"
+
+            <const> ::= <zero> | <nonzero> | "-" <nonzero> | <number> | "-" <number>
+            <number> ::= <digit> | <nonzero> <digit> | <nonzero> <digit> <number>
+            <char> ::= <letter> | <digit>
+
+The tokens are codified according to the Coddification Table:
+- identifiers: code 1
+- constants: code 2
+- reserved words: each word has its own code
+- operators: each operator has its own code
+- separators: each separator has its own code

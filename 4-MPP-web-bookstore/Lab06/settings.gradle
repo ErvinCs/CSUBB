@@ -1,0 +1,5 @@
+rootProject.name = 'bookstore'
+include 'Common'
+include 'Server'
+include 'Client'
+

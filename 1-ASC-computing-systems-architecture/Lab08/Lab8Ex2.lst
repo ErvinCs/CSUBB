@@ -1,0 +1,58 @@
+     1                                  bits 32 
+     2                                  global start        
+     3                                  extern exit               
+     4                                  extern scanf
+     5                                  extern printf
+     6                                  import exit msvcrt.dll    
+     7                                  import printf msvcrt.dll
+     8                                  import scanf msvcrt.dll
+     9                                                            
+    10                                  segment data use32 class=data
+    11 00000000 00000000<rept>              a times 100 DD 0
+    12 00000190 00000000                    len DD 0
+    13 00000194 256400                      s_format DB "%d", 0
+    14 00000197 6C656E3D00                  msg_len DB "len=", 0
+    15 0000019C 615B25645D3D00              msg_elem DB "a[%d]=", 0
+    16                                  
+    17                                  segment code use32 class=code
+    18                                      start:
+    19 00000000 68[97010000]                    PUSH msg_len
+    20 00000005 FF15[00000000]                  CALL [printf]
+    21 0000000B 83C404                          ADD ESP, 4
+    22                                          
+    23                                          ; len = scanf(format, &len)
+    24 0000000E 68[90010000]                    PUSH len
+    25 00000013 68[94010000]                    PUSH s_format
+    26 00000018 FF15[00000000]                  CALL [scanf]
+    27 0000001E 83C408                          ADD ESP, 4 * 2
+    28 00000021 8B0D[90010000]                  MOV ECX, [len]
+    29 00000027 E331                            JECXZ end_prog
+    30 00000029 BB00000000                      MOV EBX, 0
+    31 0000002E BF[00000000]                    MOV EDI, a
+    32 00000033 FC                              CLD
+    33                                          
+    34                                          loop1:
+    35 00000034 60                                  PUSHA
+    36                                              
+    37                                              ; printf(msg_elem, ebx)
+    38 00000035 53                                  PUSH EBX
+    39 00000036 68[9C010000]                        PUSH msg_elem
+    40 0000003B FF15[00000000]                      CALL [printf]
+    41 00000041 83C408                              ADD ESP, 4*2
+    42                                              
+    43                                              ;scanf(format, &[EDI])
+    44 00000044 57                                  PUSH EDI
+    45 00000045 68[94010000]                        PUSH s_format
+    46 0000004A FF15[00000000]                      CALL [scanf]
+    47 00000050 83C408                              ADD ESP, 4*2
+    48                                              
+    49 00000053 61                                  POPA
+    50 00000054 83C704                              ADD EDI, 4
+    51 00000057 43                                  INC EBX
+    52 00000058 E2DA                                LOOP loop1
+    53                                  
+    54                                          end_prog:
+    55                                  
+    56                                  
+    57 0000005A 6A00                            push    dword 0      
+    58 0000005C FF15[00000000]                  call    [exit]       

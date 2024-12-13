@@ -1,0 +1,6 @@
+C:\Users\csoka\IdeaProjects\PPD-Lab05\PPD-Lab05\bin\Debug\PPD-Lab05.exe.config
+C:\Users\csoka\IdeaProjects\PPD-Lab05\PPD-Lab05\bin\Debug\PPD-Lab05.exe
+C:\Users\csoka\IdeaProjects\PPD-Lab05\PPD-Lab05\bin\Debug\PPD-Lab05.pdb
+C:\Users\csoka\IdeaProjects\PPD-Lab05\PPD-Lab05\obj\Debug\PPD-Lab05.csproj.CoreCompileInputs.cache
+C:\Users\csoka\IdeaProjects\PPD-Lab05\PPD-Lab05\obj\Debug\PPD-Lab05.exe
+C:\Users\csoka\IdeaProjects\PPD-Lab05\PPD-Lab05\obj\Debug\PPD-Lab05.pdb

@@ -1,0 +1,59 @@
+     1                                  ; Lab6 - Problem 15
+     2                                  ; Given an array S of doublewords, 
+     3                                  ; Build the array of bytes D formed from bytes of doublewords sorted as unsigned numbers in descending order.
+     4                                  
+     5                                  bits 32 
+     6                                  global start        
+     7                                  extern exit, printf               
+     8                                  import exit msvcrt.dll
+     9                                  import printf msvcrt.dll      
+    10                                                            
+    11                                  segment data use32 class=data
+    12 00000000 00EFCDAB                    a DD 0xABCDEF00;, 0x12345678, 2
+    13                                      ; [00][EF][CD][AB], [78][56][34][12], [02][00][00][00]
+    14                                      ; => EF, CD, AB, 78, 56, 34, 12, 02, 00, 00, 00 
+    15                                      ; => 239, 205, 161, 120, 86, 52, 18, 2, 0, 0, 0
+    16                                      len_a EQU ($-a)/4
+    17 00000004 00<rept>                    res TIMES len_a*4 DB 0
+    18                                      ; str_format DB 'Result: %d, %d, %d, %d, %d, %d, %d, %d, %d, %d, %d, %d,', 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0
+    19                                      
+    20                                  segment code use32 class=code
+    21                                      start:
+    22 00000000 BE[00000000]                    MOV ESI, a
+    23 00000005 BF[04000000]                    MOV EDI, res
+    24 0000000A B904000000                      MOV ECX, len_a*4
+    25 0000000F FC                              CLD   
+    26                                          
+    27                                          ; Create the array of bytes (unsorted) in res
+    28 00000010 E304                            JECXZ end_init
+    29                                          loop_create:
+    30 00000012 AC                                  LODSB       ; AL = a[ECX]
+    31 00000013 AA                                  STOSB       ; EDI = AL
+    32 00000014 E2FC                                loop loop_create
+    33                                          end_init:
+    34                                          
+    35                                          ; Bubble Sort the array of bytes in res
+    36 00000016 66BA0100                        MOV DX, 1
+    37                                          loop1:
+    38 0000001A 6683FA00                            CMP DX, 0
+    39 0000001E 7427                                JE end_all
+    40 00000020 66BA0000                            MOV DX, 0
+    41 00000024 BE[04000000]                        MOV ESI, res
+    42 00000029 FC                                  CLD
+    43 0000002A B903000000                          MOV ECX, len_a*4-1
+    44                                              loop2:
+    45 0000002F 8A06                                    MOV AL, [ESI]
+    46 00000031 3A4601                                  CMP AL, [ESI+1]
+    47 00000034 730C                                    JAE skip_swap
+    48 00000036 8A6601                                      MOV AH, [ESI+1]
+    49 00000039 884601                                      MOV [ESI+1], AL
+    50 0000003C 8826                                        MOV [ESI], AH
+    51 0000003E 66BA0100                                    MOV DX, 1
+    52                                                  skip_swap:
+    53 00000042 46                                      INC ESI
+    54 00000043 E2EA                                LOOP loop2
+    55 00000045 EBD3                            JMP loop1
+    56                                          end_all:
+    57                                          
+    58 00000047 6A00                            push    dword 0      
+    59 00000049 FF15[00000000]                  call    [exit]       

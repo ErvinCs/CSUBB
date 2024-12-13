@@ -1,0 +1,50 @@
+     1                                  ; (c-d-a)+(b+b)-(c+a)
+     2                                  ; a : byte; b : word; c : double word; d : qword
+     3                                  ; Signed
+     4                                  ; Result: 0
+     5                                  bits 32 
+     6                                  global start        
+     7                                  extern exit               
+     8                                  import exit msvcrt.dll    
+     9                                                            
+    10                                  segment data use32 class=data
+    11 00000000 9C                          a DB -100
+    12 00000001 C800                        b DW 200
+    13 00000003 F4010000                    c DD 500
+    14 00000007 5802000000000000            d DQ 600
+    15                                      
+    16                                  
+    17                                  segment code use32 class=code
+    18                                      start:
+    19 00000000 66A1[01000000]                  MOV AX, [b]
+    20 00000006 660305[01000000]                ADD AX, [b]     ; AX = b+b
+    21 0000000D 98                              CWDE            ; EAX = b+b
+    22 0000000E 89C1                            MOV ECX, EAX    ; ECX = b+b = 400
+    23                                          
+    24 00000010 83E000                          AND EAX, 00h
+    25 00000013 A0[00000000]                    MOV AL, [a]     ; AX = a
+    26 00000018 6698                            CBW
+    27 0000001A 98                              CWDE            ; EAX = a
+    28 0000001B 0305[03000000]                  ADD EAX, [c]    ; EAX = c+a = 400
+    29                                      
+    30 00000021 29C1                            SUB ECX, EAX    ; ECX = (b+b)-(c+a) = 0
+    31                                          
+    32                                          ; Works fine until this point
+    33                                          
+    34 00000023 83E000                          AND EAX, 00h
+    35 00000026 A0[00000000]                    MOV AL, [a]     ; AL = a
+    36 0000002B 6698                            CBW             ; AX = a
+    37 0000002D 6689C3                          MOV BX, AX      ; BX = a
+    38                                          
+    39 00000030 A1[03000000]                    MOV EAX, [c]    ; EAX = c
+    40 00000035 6629D8                          SUB AX, BX      ; EAX = c-a
+    41 00000038 99                              CDQ             ; EAX:EDX = c-a
+    42 00000039 2B05[07000000]                  SUB EAX, [d]
+    43 0000003F 1B15[0B000000]                  SBB EDX, [d+4]  ; EAX:EDX = c-a-d
+    44                                          
+    45 00000045 01C8                            ADD EAX, ECX    ; EAX:EDX = (c-a-d)+(b+)-(c+a)
+    46                                  
+    47                                          
+    48                                          ; exit(0)
+    49 00000047 6A00                            push    dword 0      
+    50 00000049 FF15[00000000]                  call    [exit]       

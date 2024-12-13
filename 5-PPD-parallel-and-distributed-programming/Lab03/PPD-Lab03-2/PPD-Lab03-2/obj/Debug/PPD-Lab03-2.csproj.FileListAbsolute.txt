@@ -1,0 +1,7 @@
+C:\Users\csoka\IdeaProjects\PPD-Lab03-2\PPD-Lab03-2\bin\Debug\PPD-Lab03-2.exe.config
+C:\Users\csoka\IdeaProjects\PPD-Lab03-2\PPD-Lab03-2\bin\Debug\PPD-Lab03-2.exe
+C:\Users\csoka\IdeaProjects\PPD-Lab03-2\PPD-Lab03-2\bin\Debug\PPD-Lab03-2.pdb
+C:\Users\csoka\IdeaProjects\PPD-Lab03-2\PPD-Lab03-2\obj\Debug\PPD-Lab03-2.csprojAssemblyReference.cache
+C:\Users\csoka\IdeaProjects\PPD-Lab03-2\PPD-Lab03-2\obj\Debug\PPD-Lab03-2.csproj.CoreCompileInputs.cache
+C:\Users\csoka\IdeaProjects\PPD-Lab03-2\PPD-Lab03-2\obj\Debug\PPD-Lab03-2.exe
+C:\Users\csoka\IdeaProjects\PPD-Lab03-2\PPD-Lab03-2\obj\Debug\PPD-Lab03-2.pdb

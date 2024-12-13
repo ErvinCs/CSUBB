@@ -1,0 +1,209 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta content="text/html;charset=utf-8" http-equiv="Content-Type">
+        <title>Keyboards</title>
+        <script src="lib/jquery-2.0.3.js"></script>
+        <script lang="javascript">
+            function cacheIdBuy(id) {
+                const actualId = document.getElementById('productId'+id).getAttribute('value');
+                document.getElementById('prodIdCache').setAttribute('value', actualId.toString());
+                document.getElementById('editAction').setAttribute('value', 'buy');
+            }
+
+            function cacheIdRemove(id) {
+                const actualId = document.getElementById('productId'+id).getAttribute('value');
+                document.getElementById('prodIdCache').setAttribute('value', actualId.toString());
+                document.getElementById('editAction').setAttribute('value', 'remove');
+
+            }
+
+            function createCart(cartlist) {
+                $("#cart").html('');
+                document.getElementById('prodIdCache').setAttribute('value', '-1');
+                document.getElementById('editAction').setAttribute('value', '-1');
+                var size = cartlist.length;
+                var tbl = document.createElement('table');
+                var tr;
+                tbl.setAttribute('id', 'cartTable');
+
+                tr = tbl.insertRow(0);
+
+                var thname = document.createElement('th');
+                thname.innerHTML = "Name";
+                tr.appendChild(thname);
+
+                var thprice = document.createElement('th');
+                thprice.innerHTML = "Price";
+                tr.appendChild(thprice);
+
+                var thcateg = document.createElement('th');
+                thcateg.innerHTML = "Category";
+                tr.appendChild(thcateg);
+
+                var thbtn = document.createElement('th');
+                thbtn.innerHTML = "";
+                tr.appendChild(thbtn);
+
+                for(var i = 0; i < size; i++) {
+                    tr = tbl.insertRow(i+1);
+                    for (var column = 0; column < 4; column++) {
+                        var td = document.createElement('td');
+                        td = tr.insertCell(column);
+                        var elem;
+                        switch (column) {
+                            case 0:
+                                td.innerHTML = cartlist[i].name;
+                                break;
+                            case 1:
+                                td.innerHTML = cartlist[i].price;
+                                break;
+                            case 2:
+                                td.innerHTML = cartlist[i].category;
+                                break;
+                            case 3:
+                                elem = document.createElement('input');
+                                elem.setAttribute('type', 'button');
+                                elem.setAttribute('value', 'Remove');
+                                elem.setAttribute('id', 'btn-remove');
+                                elem.setAttribute('onclick', 'cacheIdRemove(' + i + ')');
+                                td.appendChild(elem);
+                                break;
+                            case 4:
+                                elem = document.createElement('input');
+                                elem.setAttribute('type', 'hidden');
+                                elem.setAttribute('id', 'productId' + i);
+                                elem.setAttribute('value', cartlist[i].id);
+                                td.appendChild(elem);
+                        }
+                    }
+
+                }
+
+                var section = document.getElementById('cart');
+                section.appendChild(tbl);
+            }
+
+            function createKeyboards(keyboardList) {
+                console.log(keyboardList);
+                $("#main").html('');
+                var size = keyboardList.length;
+                var tbl = document.createElement('table');
+                var tr;
+                tbl.setAttribute('id', 'itemTable');
+
+                tr = tbl.insertRow(0);
+
+                var thname = document.createElement('th');
+                thname.innerHTML = "Name";
+                tr.appendChild(thname);
+
+                var thprice = document.createElement('th');
+                thprice.innerHTML = "Price";
+                tr.appendChild(thprice);
+
+                var thcateg = document.createElement('th');
+                thcateg.innerHTML = "Category";
+                tr.appendChild(thcateg);
+
+                var thbtn = document.createElement('th');
+                thbtn.innerHTML = "";
+                tr.appendChild(thbtn);
+
+                for(var i = 0; i < size; i++) {
+                    tr = tbl.insertRow(i+1);
+                    for (var column = 0; column < 5; column++) {
+                        var td = document.createElement('td');
+                        td = tr.insertCell(column);
+                        var elem;
+                        switch (column) {
+                            case 0:
+                                td.innerHTML = keyboardList[i].name;
+                                break;
+                            case 1:
+                                td.innerHTML = keyboardList[i].price;
+                                break;
+                            case 2:
+                                td.innerHTML = keyboardList[i].category;
+                                break;
+                            case 3:
+                                elem = document.createElement('input');
+                                elem.setAttribute('type', 'button');
+                                elem.setAttribute('value', 'Buy');
+                                elem.setAttribute('id', 'btn-buy');
+                                elem.setAttribute('onclick', 'cacheIdBuy(' + i + ');');
+                                td.appendChild(elem);
+                                break;
+                            case 4:
+                                elem = document.createElement('input');
+                                elem.setAttribute('type', 'hidden');
+                                elem.setAttribute('id', 'productId' + i);
+                                elem.setAttribute('value', keyboardList[i].id);
+                                td.appendChild(elem);
+
+                        }
+                    }
+
+                }
+
+                var section = document.getElementById('main');
+                section.appendChild(tbl);
+            }
+
+            $(document).ready(function() {
+                $("#btn-showCart").click(function() {
+                    $.getJSON(
+                        'controller.php',
+                        {
+                            action: 'editCart',
+                            editAction: $('#editAction').val(),
+                            productId: $('#prodIdCache').val()
+                        },
+                        createCart
+                    );
+                });
+            });
+
+            $(document).ready(function() {
+                $("#btn-getKeyboards").click(function() {
+                    $.getJSON(
+                        'controller.php',
+                        {
+                            action: 'getKeyboards',
+                            page: $('#pagek').val()
+                        },
+                        createKeyboards
+                    );
+                    //$.getScript('addProductToCartFn.js');
+                });
+            });
+        </script>
+
+
+    </head>
+
+    <body>
+        <section id="keyboards-section">
+            Keyboards:<br/>
+            <input type="button" id="btn-getKeyboards" value="Get keyboards"/>
+            Page:
+            <input type="text" name="pagek" id="pagek" value="1"/>
+            <br/>
+        </section>
+
+        <hr/>
+
+        <section id="main">
+        </section>
+
+        <hr/>
+
+        <input type="button" id="btn-showCart" value="Show Cart"/>
+        <section id="cart">
+
+        </section>
+        <input type="hidden" id="prodIdCache" name="prodIdCache" value="-1">
+        <input type="hidden" id="editAction" name="editAction" value="-1">
+
+    </body>
+</html>

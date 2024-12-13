@@ -1,0 +1,62 @@
+     1                                  ; Lab10 - Problem7
+     2                                  ; Two natural numbers a and b (a: dword, b: dword, defined in the data segment) are given. 
+     3                                  ; Calculate a/b and display the remainder in the following format: "<a> mod <b> = <remainder>". 
+     4                                  ; Example: for a = 23, b = 5 it will display: "23 mod 5 = 3".
+     5                                  ; The values will be displayed in decimal format (base 10) with sign.
+     6                                  
+     7                                  bits 32 
+     8                                  global start        
+     9                                  extern exit, scanf, printf               
+    10                                  import exit msvcrt.dll    
+    11                                  import printf msvcrt.dll
+    12                                  import scanf msvcrt.dll
+    13                                                            
+    14                                  segment data use32 class=data
+    15 00000000 17000000                    a DD 23
+    16 00000004 05000000                    b DD 5
+    17 00000008 00000000                    remainder DD 0
+    18 0000000C 3C25643E206D6F6420-         format DB "<%d> mod <%d> = <%d>", 0
+    18 00000015 3C25643E203D203C25-
+    18 0000001E 643E00             
+    19                                  
+    20                                  segment code use32 class=code
+    21                                      modulo:  
+    22                                          ; Return EAX % ECX in EAX
+    23 00000000 55                              PUSH EBP
+    24 00000001 89E5                            MOV EBP, ESP
+    25                                          
+    26                                          ; +4  ret
+    27                                          ; +8  a
+    28                                          ; +12 b
+    29                                          
+    30 00000003 8B4508                          MOV EAX, [EBP + 8]
+    31 00000006 8B4D0C                          MOV ECX, [EBP + 12]
+    32                                          
+    33 00000009 BA00000000                      MOV EDX, 0         
+    34 0000000E F7F1                            DIV DWORD ECX 
+    35                                          
+    36                                          ; EAX:EDX div ECX : EAX 
+    37                                          ; EAX     mod ECX : EDX        
+    38 00000010 89D0                            MOV EAX, EDX     
+    39                                          
+    40 00000012 5D                              POP EBP
+    41 00000013 C3                              RET
+    42                                          
+    43                                      start:
+    44                                          ; Call modulo
+    45 00000014 FF35[04000000]                  PUSH DWORD [b]
+    46 0000001A FF35[00000000]                  PUSH DWORD [a]
+    47 00000020 E8DBFFFFFF                      CALL modulo
+    48 00000025 83C408                          ADD ESP, 4*2
+    49                                          
+    50                                          ; Call printf(format, a, b, remainder)
+    51                                          ; EAX = remainder
+    52 00000028 50                              PUSH EAX
+    53 00000029 FF35[04000000]                  PUSH DWORD [b]
+    54 0000002F FF35[00000000]                  PUSH DWORD [a]
+    55 00000035 68[0C000000]                    PUSH format
+    56 0000003A FF15[00000000]                  CALL [printf]
+    57 00000040 83C410                          ADD ESP, 4*4
+    58                                          
+    59 00000043 6A00                            push    dword 0      
+    60 00000045 FF15[00000000]                  call    [exit]       

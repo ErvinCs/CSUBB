@@ -1,0 +1,15 @@
+Rental 0: Client 5, Book 8, 2014-11-12 to 2016-11-17, Not returned
+Rental 1: Client 5, Book 9, 1999-06-22 to 2012-12-02, Not returned
+Rental 2: Client 1, Book 6, 2016-10-07 to 2018-12-12, Returned 2019-01-01
+Rental 3: Client 1, Book 6, 1998-10-07 to 2000-12-12, Not returned
+Rental 4: Client 0, Book 0, 1997-11-12 to 2017-11-12, Not returned
+Rental 5: Client 3, Book 1, 1079-08-13 to 0430-09-06, Not returned
+Rental 6: Client 2, Book 0, 0671-12-05 to 0833-09-05, Not returned
+Rental 7: Client 2, Book 6, 1036-11-28 to 0842-12-12, Not returned
+Rental 8: Client 6, Book 4, 0996-01-01 to 0948-03-22, Not returned
+Rental 9: Client 1, Book 8, 0721-03-15 to 1125-03-24, Not returned
+Rental 10: Client 1, Book 0, 0845-01-25 to 0351-03-01, Not returned
+Rental 11: Client 4, Book 0, 0721-08-07 to 0858-11-15, Not returned
+Rental 12: Client 1, Book 0, 1127-06-14 to 1813-01-18, Not returned
+Rental 13: Client 6, Book 7, 0705-03-01 to 1618-01-06, Not returned
+Rental 14: Client 4, Book 2, 0171-11-27 to 0680-10-06, Not returned

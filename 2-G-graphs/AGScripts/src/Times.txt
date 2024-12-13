@@ -1,0 +1,33 @@
+Seminar2 - Parse & Generation times
+
+For n=1000, m=10000
+List of neighbours for each vertex - Generation Time:                 158.0ms
+List of neighbours for each vertex - Parse Time:                      1071.0ms
+Double list of neighbours for each vertex - Generation time:          103.0ms
+Double list of neighbours for each vertex - Parse Time:               16.0ms
+Adjacency matrix - Generation time:                                   133.0ms
+Adjacency matrix - Parse Time:                                        93.0ms
+
+For n=10000, m=100000
+List of neighbours for each vertex - Generation Time:                 296.0ms
+List of neighbours for each vertex - Parse Time:                      26098.0ms
+Double list of neighbours for each vertex - Generation time:          336.0ms
+Double list of neighbours for each vertex - Parse Time:               47.0ms
+Adjacency matrix - Generation time:                                   1833.0ms
+Adjacency matrix - Parse Time:                                        2547.0ms
+
+For n=100000, m=1000000
+List of neighbours for each vertex - Generation Time:                 2718.0ms
+List of neighbours for each vertex - Parse Time:                      More than 30m
+Double list of neighbours for each vertex - Parse Time:               322.0ms
+Double list of neighbours for each vertex - Generation time:          2381.0ms
+Adjacency matrix - Generation Time:                                   Out Of Memory Error
+Adjacency matrix - Parse Time:                                        Out Of Memory Error
+
+For n=1000000, m=10000000
+List of neighbours for each vertex - Generation Time:                 27147.0ms
+List of neighbours for each vertex - Parse Time:                      More than 30m
+Double list of neighbours for each vertex - Parse Time:               3679.0ms
+Double list of neighbours for each vertex - Generation time:          64944.0ms
+Adjacency matrix - Generation Time:                                   Out Of Memory Error
+Adjacency matrix - Parse Time:                                        Out Of Memory Error

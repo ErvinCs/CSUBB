@@ -1,0 +1,5 @@
+USE dbms
+GO
+
+SET TRANSACTION ISOLATION LEVEL READ UNCOMMITED
+SELECT * FROM dbms.dbo.donors where donor_id = 1

@@ -1,0 +1,166 @@
+﻿@{
+    Layout = null;
+}
+<!DOCTYPE html>
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>Main</title>
+    <script src="~/Scripts/jquery-3.3.1.js"></script>
+    <script lang="javascript">
+        var counter = 0;
+
+        function checkCookie() {
+            if (document.cookie == null) {
+                window.location.href('../Login');
+            }
+        }
+
+        function removeItemRaw(rawId) {
+            $("#" + rawId).remove();
+        }
+
+        function removeItem(id) {
+            $("#itemTable" + id).remove();
+        }
+
+        function newItem() {
+            var tbl = document.createElement('table');
+            var tr;
+            var thisId = counter;
+            tbl.setAttribute('id', 'itemTable' + thisId);
+            tbl.classList.add("new-items");
+            counter++;
+
+            tr = tbl.insertRow(0);
+
+            var thname = document.createElement('th');
+            thname.innerHTML = "Name";
+            tr.appendChild(thname);
+
+            var thprice = document.createElement('th');
+            thprice.innerHTML = "Description";
+            tr.appendChild(thprice);
+
+            var thcateg = document.createElement('th');
+            thcateg.innerHTML = "Value";
+            tr.appendChild(thcateg);
+
+            for (var i = 0; i < 1; i++) {
+                tr = tbl.insertRow(i + 1);
+                for (var column = 0; column < 4; column++) {
+                    var td = document.createElement('td');
+                    td = tr.insertCell(column);
+                    var elem;
+                    switch (column) {
+                        case 0:
+                            td.innerHTML = '<input type="text" class="tbl-input" name="name" id="name"/>';
+                            break;
+                        case 1:
+                            td.innerHTML = '<input type="text" class="tbl-input" name="description" id="desc"/>';
+                            break;
+                        case 2:
+                            td.innerHTML = '<input type="text" class="tbl-input" name="value" id="value"/>';
+                            break;
+                        case 3:
+                            td.innerHTML = '<input id="undo-item" class="tbl-input" type="button" value="Remove" onclick="removeItem(' + thisId + ')">';
+                    }
+                }
+            }
+
+            var section = document.getElementById('add-items-div');
+            section.appendChild(tbl);
+        }
+
+        $(document).ready(function () {
+            $("#show-items-btn").click(function () {
+                $.get("/Main/GetItemsByUser",
+                    function (data, status) {
+                        $("#items-div").html(data);
+                    });
+            });
+            $("#log-out-btn").click(function () {
+                $.get("/Login/Logout",
+                    function (data, status) {
+                        window.location.href = '../Login';
+                    });
+            });
+            $("#admin-btn").click(function () {
+                    window.location.href = '../Admin';
+            });
+            $("#push-items-btn").click(function () {
+                $("table.new-items").each(function () {
+                    var attributes = [];
+                    var colCount = 0;
+                    var tbl = $(this);
+                    tbl.children('tbody').children('tr:last').children('td').each(function () {
+                        switch (colCount) {
+                            case 0:
+                                attributes[colCount] = $(this).find('.tbl-input').val();
+                                break;
+                            case 1:
+                                attributes[colCount] = $(this).find('.tbl-input').val();
+                                break;
+                            case 2:
+                                attributes[colCount] = $(this).find('.tbl-input').val();
+                                break;
+
+                        }
+                        colCount++;
+                        //console.log(this);
+                    });
+
+                    $.post('/Main/AddItem', {
+                        name: attributes[0],
+                        description: attributes[1],
+                        value: attributes[2]
+                    });
+                    //console.log(tbl.attr('id'));
+                    removeItemRaw(tbl.attr('id'));
+                });
+                $.get("/Main/GetItemsByUser",
+                    function (data, status) {
+                        $("#items-div").html(data);
+                    });
+            });
+        });
+
+    </script>
+    <style>
+        h3 {
+            text-align: center;
+        }
+
+        .my-items {
+        }
+
+        .new-items {
+        }
+
+        .tbl-input {
+        }
+    </style>
+</head>
+<body>
+    <h3>Your Items</h3>
+
+    <input id="show-items-btn" type="button" value="Show Items" />
+    <div id="items-div">
+    </div>
+    <br />
+
+    <div id="add-items-div">
+        <input id="push-items-btn" type="button" value="Create Items">
+        <br />
+        <input id="new-item-btn" type="button" value="New Item" onclick="newItem()">
+        <br />
+    </div>
+    
+    <section>
+        <input id="admin-btn" type="button" value="Admin" />
+        <br />
+        <input id="log-out-btn" type="button" value="Log Out" />
+        <br />
+    </section>
+</body>
+</html>

@@ -1,0 +1,60 @@
+     1                                  bits 32 
+     2                                  global start        
+     3                                  extern exit, fopen, fprintf, fclose               
+     4                                  import exit msvcrt.dll    
+     5                                  import fopen msvcrt.dll    
+     6                                  import fprintf msvcrt.dll    
+     7                                  import fclose msvcrt.dll    
+     8                                                   
+     9                                  segment data use32 class=data
+    10 00000000 6166696C652E747874-         filename db "afile.txt", 0
+    10 00000009 00                 
+    11 0000000A 7700                        access_mode db "w", 0           ; Write mode
+    12 0000000C 00000000                    fd DD 0
+    13 00000010 010000000200000003-         a DD 1, 2, 3, -20
+    13 00000019 000000ECFFFFFF     
+    14                                      lena EQU ($-a)/4
+    15 00000020 25642000                    format DB "%d ", 0
+    16                                  
+    17                                  segment code use32 class=code
+    18                                      start:
+    19                                          ; fopen(filename, access_mode)
+    20 00000000 68[0A000000]                    PUSH access_mode
+    21 00000005 68[00000000]                    PUSH filename
+    22 0000000A FF15[00000000]                  CALL [fopen]
+    23 00000010 83C408                          ADD ESP, 4*2
+    24                                          
+    25                                          ; EAX <- file descriptor (handle)
+    26 00000013 A3[0C000000]                    MOV [fd], EAX
+    27 00000018 83F800                          CMP EAX, 0                  ; Check if the file has succesfully opened
+    28 0000001B 7436                            JE end_prog
+    29                                          
+    30                                          ; Write file
+    31 0000001D BE[10000000]                    MOV ESI, a
+    32 00000022 FC                              CLD
+    33 00000023 B904000000                      MOV ECX, lena
+    34 00000028 E329                            JECXZ end_prog
+    35                                          
+    36                                          loop1:
+    37 0000002A AD                                  LODSD
+    38 0000002B 60                                  PUSHA
+    39                                              
+    40                                              ; fprintf(fd, format, EAX)
+    41 0000002C 50                                  PUSH EAX
+    42 0000002D 68[20000000]                        PUSH format
+    43 00000032 FF35[0C000000]                      PUSH DWORD [fd]
+    44 00000038 FF15[00000000]                      CALL [fprintf]
+    45 0000003E 83C40C                              ADD ESP, 4*3            ; Clear the Stack
+    46 00000041 60                                  PUSHA
+    47                                              
+    48 00000042 E2E6                                LOOP loop1
+    49                                          
+    50                                          ; Close file: fclose(fd)
+    51 00000044 FF35[0C000000]                  PUSH DWORD [fd]
+    52 0000004A FF15[00000000]                  CALL [fclose]
+    53 00000050 83C404                          ADD ESP, 4
+    54                                          
+    55                                          end_prog:
+    56                                          
+    57 00000053 6A00                            push    dword 0      
+    58 00000055 FF15[00000000]                  call    [exit]       

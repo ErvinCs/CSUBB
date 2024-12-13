@@ -1,0 +1,25 @@
+.login-box {
+    margin-left: 40%;
+    margin-top: 10%;
+    margin-right: 40%;
+    width: 300px;
+    border-radius: 10px;
+    border: 1px solid #222;
+    padding: 10px;
+}
+
+.login-box h3 {
+    text-align: center;
+    color: #222;
+}
+
+.login-box input {
+    width: 100%;
+    font-size: 16px;
+    margin-bottom: 30px;
+    color: #222;
+}
+
+.login-box label {
+    color: #222;
+}

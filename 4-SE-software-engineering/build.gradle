@@ -1,0 +1,105 @@
+allprojects {
+    group 'ro.blooddonation'
+    version '1.0-SNAPSHOT'
+
+    buildscript {
+        repositories {
+            mavenCentral()
+        }
+        dependencies {
+            classpath("org.springframework.boot:spring-boot-gradle-plugin:2.0.2.RELEASE")
+        }
+    }
+
+    repositories {
+        mavenCentral()
+    }
+
+    apply plugin: 'java'
+    apply plugin: 'war'
+
+    sourceCompatibility = 1.8
+
+    ext {
+        testVersion = '4.12'
+
+        springVersion = '5.0.5.RELEASE'
+        springDataVersion = '2.0.3.RELEASE'
+
+        jaxbVersion = '2.3.0'
+        activationVersion = '1.2.0'
+        jacksonDatabindVersion = '2.9.4'
+        javaxServeletApiVersion = '3.1.0'
+
+        hibernateVersion = '5.2.6.Final'
+
+        tomcatversion = '9.0.8'
+        lombokVersion = '1.16.12'
+        caffeineVersion = '2.6.1'
+        hikariVersion = '2.7.7'
+
+        sqlConnector = '6.0.6'
+        postgresqlVersion = '42.2.1'
+        dbcpVersion = '2.2.0'
+        modelMapperVersion = '2.0.0'
+
+        slf4jVersion = '1.7.25'
+        log4jVersion = '2.10.0'
+    }
+
+    dependencies {
+        testCompile group: 'junit', name: 'junit', version: "$testVersion"
+
+        //spring
+        compile group: 'org.springframework', name: 'spring-context', version: "$springVersion"
+        compile group: 'org.springframework', name: 'spring-web', version: "$springVersion"
+        compile group: 'org.springframework', name: 'spring-webmvc', version: "$springVersion"
+        compile group: 'org.springframework', name: 'spring-context-support', version: "$springVersion"
+        compile group: 'org.springframework', name: 'spring-orm', version: "$springVersion"
+        compile group: 'org.springframework.data', name: 'spring-data-jpa', version: "$springDataVersion"
+
+        //persistence
+//        compile group: 'mysql', name: 'mysql-connector-java', version: "$sqlConnector"
+        compile group: 'org.postgresql', name: 'postgresql', version: "$postgresqlVersion"
+        compile group: 'org.hibernate', name: 'hibernate-core', version: "$hibernateVersion"
+        compile group: 'com.github.ben-manes.caffeine', name: 'caffeine', version: "$caffeineVersion"
+        compile group: 'com.zaxxer', name: 'HikariCP', version: "$hikariVersion"
+
+        //jackson
+        compile group: 'com.fasterxml.jackson.core', name: 'jackson-databind', version: "$jacksonDatabindVersion"
+        compile group: 'com.fasterxml.jackson.core', name: 'jackson-core', version: "$jacksonDatabindVersion"
+        compile group: 'com.fasterxml.jackson.core', name: 'jackson-annotations', version: "$jacksonDatabindVersion"
+
+        //javax
+        compile group: 'javax.servlet', name: 'javax.servlet-api', version: "$javaxServeletApiVersion"
+        compile group: 'javax.xml.bind', name: 'jaxb-api', version: "$jaxbVersion"
+//        compile group: 'com.sun.activation', name: 'javax.activation', version: "$activationVersion"
+
+        //logging - slf4j
+        compile group: 'org.slf4j', name: 'slf4j-api', version: "$slf4jVersion"
+        testCompile group: 'org.slf4j', name: 'slf4j-simple', version: "$slf4jVersion"
+        //logging - log4j
+        compile group: 'org.apache.logging.log4j', name: 'log4j-slf4j-impl', version: "$log4jVersion"
+        compile group: 'org.apache.logging.log4j', name: 'log4j-core', version: "$log4jVersion"
+        compile group: 'org.apache.logging.log4j', name: 'log4j-1.2-api', version: "$log4jVersion"
+
+        //lombok
+        compile group: 'org.projectlombok', name: 'lombok', version: "$lombokVersion"
+
+        //tomcat
+        compile group: 'org.apache.tomcat', name: 'tomcat-catalina', version: "$tomcatversion", ext: 'pom'
+
+        //ModelMapper
+        //compile group: 'org.modelmapper', name: 'modelmapper', version: "$modelMapperVersion"
+
+//        compile group: 'org.springframework', name: 'spring-jdbc', version: "$springVersion"
+//        compile group: 'org.hibernate', name: 'hibernate-osgi', version: "$hibernateVersion"
+//        compile group: 'org.hibernate', name: 'hibernate-spatial', version: "$hibernateVersion"
+//        compile group: 'org.hibernate', name: 'hibernate-envers', version: "$hibernateVersion"
+//        compile group: 'org.hibernate', name: 'hibernate-hikaricp', version: "$hibernateVersion"
+//        compile group: 'org.hibernate', name: 'hibernate-c3p0', version: "$hibernateVersion"
+//        compile group: 'org.hibernate', name: 'hibernate-proxool', version: "$hibernateVersion"
+//        compile group: 'org.hibernate', name: 'hibernate-infinispan', version: "$hibernateVersion"
+//        compile group: 'org.hibernate', name: 'hibernate-ehcache', version: "$hibernateVersion"
+    }
+}

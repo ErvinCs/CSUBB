@@ -1,0 +1,55 @@
+{
+  "project_info": {
+    "project_number": "1068647611681",
+    "firebase_url": "https://sweater-ervincs-01.firebaseio.com",
+    "project_id": "sweater-ervincs-01",
+    "storage_bucket": "sweater-ervincs-01.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:1068647611681:android:1d5480769120af64",
+        "android_client_info": {
+          "package_name": "com.lab021.csoka.sweater"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "1068647611681-gl2el5r0jsiq59r3janvc3gfemnpn9nr.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.lab021.csoka.sweater",
+            "certificate_hash": "61e58ecbe1bf96fdca994b00cbee779fe4c538aa"
+          }
+        },
+        {
+          "client_id": "1068647611681-aojv8hgh8p63ub4jc1o1186qnaoqv4fp.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBYJrnPyAZhYdmw624b6wqxayANHaj2VKo"
+        }
+      ],
+      "services": {
+        "analytics_service": {
+          "status": 1
+        },
+        "appinvite_service": {
+          "status": 2,
+          "other_platform_oauth_client": [
+            {
+              "client_id": "1068647611681-aojv8hgh8p63ub4jc1o1186qnaoqv4fp.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        },
+        "ads_service": {
+          "status": 2
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

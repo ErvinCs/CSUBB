@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta content="text/html;charset=utf-8" http-equiv="Content-Type">
+        <title>Keyboards</title>
+        <script src="lib/jquery-2.0.3.js"></script>
+        <script lang="javascript">
+
+            function showMice(mouseList) {
+                console.log(mouseList);
+                var content = "<table><thead><tr><td>ID</td><td>Name</td><td>Price</td><td>Category</td></tr></thead>";
+                mouseList.forEach(item => {
+                    mouse = item;
+                    content +=   "<tr>";
+                    content +=   "<td>" + mouse.id + "</td>" +
+                        "<td>" + mouse.name + "</td>" +
+                        "<td>" + mouse.price + "</td>" +
+                        "<td>" + mouse.category + "</td></tr>";
+                });
+                content += "</table>";
+
+                $("#main").html(content);
+            }
+
+            $(document).ready(function() {
+                $("#btn-getMice").click(function () {
+                    $.getJSON(
+                        "controller.php",
+                        {
+                            action: "getMice",
+                            page: $('#pagem').val()
+                        },
+                        showMice
+                    );
+                });
+            });
+        </script>
+
+
+    </head>
+
+    <body>
+    <section id="keyboards-section">
+        Mice:<br/>
+        <input type="button" id="btn-getMice" value="Get mice"/>
+        Page:
+        <input type="text" name="pagem" id="pagem" value="1"/>
+        <br/>
+    </section>
+
+    <hr/>
+
+    <section id="main"></section>
+
+    <hr/>
+
+    <section id="cart"> </section>
+    <input type="hidden" id="productId" name="productId" value="-1">
+
+    </body>
+</html>

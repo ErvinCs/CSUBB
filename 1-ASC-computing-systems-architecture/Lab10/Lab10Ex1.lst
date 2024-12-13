@@ -1,0 +1,82 @@
+     1                                  ; Count the number of digits in a file
+     2                                  ; 
+     3                                  ; open
+     4                                  ;   do
+     5                                  ;     fread
+     6                                  ;     count digits
+     7                                  ;   while EAX > 0
+     8                                  ; close
+     9                                  
+    10                                  bits 32 
+    11                                  global start        
+    12                                  extern exit, fopen, fread, fclose               
+    13                                  import exit msvcrt.dll
+    14                                  import fopen msvcrt.dll
+    15                                  import fread msvcrt.dll
+    16                                  import fclose msvcrt.dll
+    17                                                            
+    18                                  segment data use32 class=data
+    19 00000000 696E7075745F65785F-         filename DB "input_ex_1.txt", 0          ; Note that the file must exist
+    19 00000009 312E74787400       
+    20 0000000F 7200                        access_mode DB "r", 0               ; Read mode
+    21 00000011 00000000                    fd DD 0                             ; File descriptor
+    22                                      len EQU 100                         ; Buffer size
+    23 00000015 00<rept>                    buffer times len DB 0               ; Buffer
+    24                                      
+    25                                      
+    26                                  segment code use32 class=code
+    27                                      start:
+    28                                          ; fopen(filename, access_mode)
+    29 00000000 68[0F000000]                    PUSH access_mode
+    30 00000005 68[00000000]                    PUSH filename
+    31 0000000A FF15[00000000]                  CALL [fopen]
+    32 00000010 83C408                          ADD ESP, 4*2                    ; Free the stack (move the pointer)
+    33                                          
+    34                                          ; EAX holds fd
+    35 00000013 A3[11000000]                    MOV [fd], EAX
+    36 00000018 83F800                          CMP EAX, 0                      ; Check if the file descriptor is valid
+    37 0000001B 7447                            JE end_prog
+    38                                          
+    39 0000001D BB00000000                      MOV EBX, 0                      ; Digit counter
+    40                                          loop1:
+    41                                              ; fread(buffer, 1, len, fd) 
+    42 00000022 FF35[11000000]                      PUSH DWORD [fd]
+    43 00000028 6A64                                PUSH DWORD len              ; Note that len is a constant
+    44 0000002A 6A01                                PUSH DWORD 1
+    45 0000002C 68[15000000]                        PUSH buffer                 ; Since 'buffer' is an address the assembler knows that it is on 32-bits
+    46 00000031 FF15[00000000]                      CALL [fread]                ; Read the file
+    47 00000037 83C410                              ADD ESP, 4*4                ; Free the stack (move the pointer)
+    48                                          
+    49                                              ; On finishing work with the file   
+    50 0000003A 83F800                              CMP EAX, 0
+    51 0000003D 7416                                JE clean_prog
+    52                                              
+    53                                              ; Init buffer & counter used to parse the file
+    54 0000003F BE[15000000]                        MOV ESI, buffer
+    55 00000044 89C1                                MOV ECX, EAX
+    56 00000046 FC                                  CLD
+    57                                              
+    58                                              loop2:
+    59 00000047 AC                                      LODSB   ; AL = curr_char
+    60                                                  
+    61                                                  ; if >= 0 && <= 9 then count in EBX, else skip curr_char
+    62 00000048 3C30                                    CMP AL, '0'
+    63 0000004A 7C05                                    JL next
+    64 0000004C 3C39                                    CMP AL, '9'
+    65 0000004E 7F01                                    JG next
+    66 00000050 43                                      INC EBX
+    67                                                  
+    68                                                  next:
+    69 00000051 E2F4                                LOOP loop2
+    70 00000053 EBCD                            JMP loop1
+    71                                          
+    72                                          ; Close files
+    73                                          clean_prog:
+    74                                              ; fclose(fd)
+    75 00000055 FF35[11000000]                      PUSH DWORD [fd]
+    76 0000005B FF15[00000000]                      CALL [fclose]
+    77 00000061 83C404                              ADD ESP, 4
+    78                                          
+    79                                          end_prog:
+    80 00000064 6A00                            push    dword 0      
+    81 00000066 FF15[00000000]                  call    [exit]       

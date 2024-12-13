@@ -1,0 +1,84 @@
+﻿@{
+    Layout = null;
+}
+<!DOCTYPE html>
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>Main</title>
+    <script src="~/Scripts/jquery-3.3.1.js"></script>
+    <script lang="javascript">
+        var countArr = [];
+
+        function checkCookie() {
+            if (document.cookie == null) {
+                window.location.href('../Login');
+            }
+        }
+
+        function count() {
+            $("#tbl tr").each(function () {
+                var name = $(this).find("#name").html();
+                countArr[name]++;
+            });
+        }
+
+        $(document).ready(function () {
+            $("#show-items-btn").click(function () {
+                $.get("/Main/GetItemsByUser",
+                    { page: $("#pages option:selected").val() },
+                    function (data, status) {
+                        $("#items-div").html(data);
+                    });
+                count();
+            });
+            $("#log-out-btn").click(function () {
+                $.get("/Login/Logout",
+                    function (data, status) {
+                        window.location.href = '../Login';
+                    });
+            });
+            $("#popular-btn").click(function () {
+
+            });
+        });
+
+    </script>
+    <style>
+        h3 {
+            text-align: center;
+        }
+
+        .my-items {
+        }
+
+        .new-items {
+        }
+
+        .tbl-input {
+        }
+    </style>
+</head>
+<body>
+    <h3>Your Files</h3>
+
+    <input id="show-items-btn" type="button" value="Show Files" />
+    <div id="items-div">
+    </div>
+    <br />
+
+    <label for="page">Page: </label>
+    <select name="page" id="pages">
+        <option value="1">1</option>
+        <option value="2">2</option>
+    </select>
+    <br/>
+
+    <section>
+        <input id="popular-btn" type="button" value="Most Popular" />
+        <br />
+        <input id="log-out-btn" type="button" value="Log Out" />
+        <br />
+    </section>
+</body>
+</html>

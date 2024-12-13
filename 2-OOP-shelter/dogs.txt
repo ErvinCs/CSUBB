@@ -1,0 +1,7 @@
+Pekingese,Tama,10,https://vignette.wikia.nocookie.net/onepunchman/images/0/07/Saitama_serious_profile.png/revision/latest?cb=20161002154538,40
+Cat,Byron,3,https://bestfriends.org/adopt/adopt-our-sanctuary/12802404/myron,41
+Dog,Dog2,2,https://www.petfinder.com/dog/koda-41405326/ak/fairbanks/fairbanks-north-star-borough-animal-control-ak12/,42
+WiseDoggo,Si,2,https://sites.google.com/view/iuliana-bocicor/teaching/oop,50
+"IDontLikeHowYouDidThis",TakeAGuess,1,http://www.cs.ubbcluj.ro/~marianzsu/index.html,51
+German,Hitler,80,https://goo.gl/images/NXePi9,20
+Dog,Dog3,6,www.youtube.com,43

@@ -1,0 +1,43 @@
+
+Write a web application for an e-commerce store.
+The application should maintain information about the products it sells in the database. X
+The user should browse products by categories (use AJAX for this). X
+Add and remove products to a shopping cart.
+Product browsing should be paged - products are displayed on pages with maximum 4 products on a page X
+(you should be able to go to the previous and the next page).
+
+----------------------------------------------------------------
+
+            function showCart(cartList) {
+                console.log(cartList);
+                var content = '<table id="cart-list"><thead><tr><td>Name</td><td>Price</td><td>Category</td></tr></thead>';
+                cartList.forEach(item => {
+                    product = item;
+                    content +=  '<tr>';
+                    content +=  '<td>' + product.name + '</td>' +
+                                '<td>' + product.price + '</td>' +
+                                '<td>' + product.category + '</td>' +
+                                '<td>' + '<button id="btn-remove-id" onclick="cacheId(product.id)">Remove</button>' + '</td>';
+                    content += '</tr>';
+                });
+                content += '</table>';
+
+                $("#cart").html(content);
+            }
+
+            function showKeyboards(keyboardList) {
+                console.log(keyboardList);
+                var content = "<table id='item-list'><thead><tr><td>Name</td><td>Price</td><td>Category</td></tr></thead>";
+                keyboardList.forEach(item => {
+                    keyboard = item;
+                    content +=   "<tr>";
+                    content +=   "<td>" + keyboard.name + "</td>" +
+                                 "<td>" + keyboard.price + "</td>" +
+                                 "<td>" + keyboard.category + "</td>" +
+                                 "<td>" + '<button id="btn-buy-id" onclick="cacheId(keyboard.id)">Buy</button> ' + "</td>";
+                    content += "</tr>";
+                });
+                content += "</table>";
+
+                $("#main").html(content);
+            }

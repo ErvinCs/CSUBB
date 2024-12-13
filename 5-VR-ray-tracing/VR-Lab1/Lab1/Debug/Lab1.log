@@ -1,0 +1,13 @@
+﻿  main.cpp
+c:\_myfiles\_fmi\workspace\vr\ubb-vr-course\lab1\lab1\vector.hpp(119): warning C4244: 'initializing': conversion from 'double' to 'float', possible loss of data
+c:\_myfiles\_fmi\workspace\vr\ubb-vr-course\lab1\lab1\scene.hpp(11): warning C4305: 'argument': truncation from 'double' to 'float'
+c:\_myfiles\_fmi\workspace\vr\ubb-vr-course\lab1\lab1\scene.hpp(12): warning C4305: 'argument': truncation from 'double' to 'float'
+c:\_myfiles\_fmi\workspace\vr\ubb-vr-course\lab1\lab1\scene.hpp(13): warning C4305: 'argument': truncation from 'double' to 'float'
+c:\_myfiles\_fmi\workspace\vr\ubb-vr-course\lab1\lab1\scene.hpp(14): warning C4305: 'argument': truncation from 'double' to 'float'
+c:\_myfiles\_fmi\workspace\vr\ubb-vr-course\lab1\lab1\scene.hpp(15): warning C4305: 'argument': truncation from 'double' to 'float'
+c:\_myfiles\_fmi\workspace\vr\ubb-vr-course\lab1\lab1\scene.hpp(16): warning C4305: 'argument': truncation from 'double' to 'float'
+c:\_myfiles\_fmi\workspace\vr\ubb-vr-course\lab1\lab1\scene.hpp(18): warning C4305: 'argument': truncation from 'double' to 'float'
+c:\_myfiles\_fmi\workspace\vr\ubb-vr-course\lab1\lab1\scene.hpp(22): warning C4305: 'argument': truncation from 'double' to 'float'
+c:\_myfiles\_fmi\workspace\vr\ubb-vr-course\lab1\lab1\scene.hpp(26): warning C4305: 'argument': truncation from 'double' to 'float'
+c:\_myfiles\_fmi\workspace\vr\ubb-vr-course\lab1\lab1\main.cpp(110): warning C4244: 'argument': conversion from 'int' to 'float', possible loss of data
+  Lab1.vcxproj -> C:\_MyFiles\_FMI\Workspace\VR\ubb-vr-course\Lab1\Debug\Lab1.exe

@@ -1,0 +1,23 @@
+USE Lab05
+GO
+
+CREATE NONCLUSTERED INDEX IDX_NC_Tb_b2
+    ON Tb (b2);   
+GO 
+
+CREATE NONCLUSTERED INDEX IDX_NC_Ta_int1_str1
+    ON Ta (int1, str1);   
+GO 
+
+CREATE CLUSTERED INDEX IDX_C_Ta_a2
+	ON Ta (a2)
+GO
+
+CREATE NONCLUSTERED INDEX IDX_NC_Tb_bid_b2
+    ON Tb (bid, b2);   
+GO 
+
+--For the View
+CREATE NONCLUSTERED INDEX IDX_NC_Tb_int2_str2
+    ON Tb (int2, str2);   
+GO 
